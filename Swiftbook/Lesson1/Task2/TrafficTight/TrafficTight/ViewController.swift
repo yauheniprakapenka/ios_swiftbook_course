@@ -12,51 +12,55 @@ class ViewController: UIViewController {
     
     enum TrafficLightColor { case red, yellow, green }
     
+    // MARK: - IB Outlets
     @IBOutlet var redView: UIView!
     @IBOutlet var yellowView: UIView!
     @IBOutlet var greenView: UIView!
     
     @IBOutlet var startButton: UIButton!
     
-    private var currentTrafficLightColor    = TrafficLightColor.red
-    private let activeColor: CGFloat        = 1.0
-    private let inactiveColor: CGFloat      = 0.3
+    // MARK: - Private Properties
+    private var currentTrafficLightColor         = TrafficLightColor.red
+    private let activeColorAlpha: CGFloat        = 1.0
+    private let inactiveColorAlpha: CGFloat      = 0.3
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
     }
     
+    // MARK: - IB Actions
     @IBAction func startButtonTapped(_ sender: UIButton) {
         startButton.setTitle("NEXT", for: .normal)
         
         switch currentTrafficLightColor {
         case .red:
-            redView.alpha       = activeColor
-            yellowView.alpha    = inactiveColor
-            greenView.alpha     = inactiveColor
+            redView.alpha       = activeColorAlpha
+            yellowView.alpha    = inactiveColorAlpha
+            greenView.alpha     = inactiveColorAlpha
             currentTrafficLightColor = .yellow
         case .yellow:
-            redView.alpha       = inactiveColor
-            yellowView.alpha    = activeColor
-            greenView.alpha     = inactiveColor
+            redView.alpha       = inactiveColorAlpha
+            yellowView.alpha    = activeColorAlpha
+            greenView.alpha     = inactiveColorAlpha
             currentTrafficLightColor = .green
         case .green:
-            redView.alpha       = inactiveColor
-            yellowView.alpha    = inactiveColor
-            greenView.alpha     = activeColor
+            redView.alpha       = inactiveColorAlpha
+            yellowView.alpha    = inactiveColorAlpha
+            greenView.alpha     = activeColorAlpha
             currentTrafficLightColor = .red
         }
     }
     
+    // MARK: - Private Methods
     private func configureViews() {
-        redView.layer.cornerRadius      = redView.bounds.width / 2
-        yellowView.layer.cornerRadius   = yellowView.bounds.width / 2
-        greenView.layer.cornerRadius    = greenView.bounds.width / 2
+        let views = [redView, yellowView, greenView]
         
-        redView.alpha       = inactiveColor
-        yellowView.alpha    = inactiveColor
-        greenView.alpha     = inactiveColor
+        for view in views {
+            view?.layer.cornerRadius    = (view?.bounds.width)! / 2
+            view?.alpha                 = inactiveColorAlpha
+        }
     }
 }
 
