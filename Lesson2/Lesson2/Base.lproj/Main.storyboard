@@ -54,19 +54,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ou5-sO-EMR">
                                         <rect key="frame" x="60" y="0.0" width="36" height="118"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-AQ-bai">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-AQ-bai">
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2E8-D5-FiN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2E8-D5-FiN">
                                                 <rect key="frame" x="0.0" y="42" width="36" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHl-9L-gOv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHl-9L-gOv">
                                                 <rect key="frame" x="0.0" y="84" width="36" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -82,12 +82,21 @@
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kf1-tZ-h1C">
                                                 <rect key="frame" x="-2" y="0.0" width="216" height="36.333333333333336"/>
+                                                <connections>
+                                                    <action selector="valueSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Xo-DL-rza"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eFq-Li-fiB">
                                                 <rect key="frame" x="-2" y="41.333333333333314" width="216" height="36.333333333333343"/>
+                                                <connections>
+                                                    <action selector="valueSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="t1n-xu-7Ze"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x2Y-TB-eU4">
                                                 <rect key="frame" x="-2" y="82.666666666666686" width="216" height="36.333333333333343"/>
+                                                <connections>
+                                                    <action selector="valueSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5p4-8M-x17"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -138,7 +147,7 @@
                         <outlet property="blueTextField" destination="JPH-d4-6k0" id="kQl-7S-dhZ"/>
                         <outlet property="changeableColorView" destination="WMf-dj-NZB" id="3Xh-3R-Sm8"/>
                         <outlet property="greenLabel" destination="2E8-D5-FiN" id="8Lh-lN-4tV"/>
-                        <outlet property="greenSlider" destination="x2Y-TB-eU4" id="aPa-jK-ivP"/>
+                        <outlet property="greenSlider" destination="eFq-Li-fiB" id="lyF-CE-Gv7"/>
                         <outlet property="greenTextField" destination="IXR-3d-I4T" id="vzX-pA-nua"/>
                         <outlet property="redLabel" destination="kkO-AQ-bai" id="RFp-uB-wY8"/>
                         <outlet property="redSlider" destination="kf1-tZ-h1C" id="kah-63-RZc"/>
