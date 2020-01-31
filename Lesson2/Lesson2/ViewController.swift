@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     enum SliderId: String {
-        case redSliderID, greenSliderID, blueSliderID
+        case redSliderID
+        case greenSliderID
+        case blueSliderID
     }
     
     @IBOutlet var redSlider: UISlider!
@@ -34,10 +36,7 @@ class ViewController: UIViewController {
         configLabels()
         congigTextFields()
         
-        changeableColorView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
-                                                      green: CGFloat(greenSlider.value),
-                                                      blue: CGFloat(redSlider.value),
-                                                      alpha: 1)
+        changeableColorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
     }
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
@@ -67,12 +66,14 @@ class ViewController: UIViewController {
             print("Error getting value from slider")
         }
         
-        changeableColorView.backgroundColor = UIColor(red: redOpacity,
-                                                      green: greenOpacity,
-                                                      blue: blueOpacity,
-                                                      alpha: 1)
+        changeableColorView.backgroundColor = UIColor(red: redOpacity, green: greenOpacity, blue: blueOpacity, alpha: 1)
     }
-    
+}
+
+// MARK: - Setup UI
+
+extension ViewController {
+
     private func configSliders() {
         redSlider.minimumValue              = 0
         redSlider.maximumValue              = 1
@@ -103,5 +104,54 @@ class ViewController: UIViewController {
         redTextField.text   = String(format: "%.2f", redSlider.value)
         greenTextField.text = String(format: "%.2f", greenSlider.value)
         blueTextField.text  = String(format: "%.2f", blueSlider.value)
+        
+        redTextField.keyboardType       = .decimalPad
+        greenTextField.keyboardType     = .decimalPad
+        blueTextField.keyboardType      = .decimalPad
+        
+        addDoneButtonOnDecimalPad()
+    }
+}
+
+// MARK: - Add Done button on decimal pad
+
+extension ViewController {
+    
+    private func addDoneButtonOnDecimalPad() {
+        let toolbar = UIToolbar(frame: CGRect.init())
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
+
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(doneButton)
+
+        toolbar.items = items
+        toolbar.sizeToFit()
+
+        redTextField.inputAccessoryView     = toolbar
+        greenTextField.inputAccessoryView   = toolbar
+        blueTextField.inputAccessoryView    = toolbar
+    }
+    
+    @objc private func doneButtonTapped(_ sender: UIButton) {
+        redSlider.value     = Float(Double(redTextField.text!)!)
+        greenSlider.value   = Float(Double(greenTextField.text!)!)
+        blueSlider.value    = Float(Double(blueTextField.text!)!)
+        
+        redLabel.text       = String(format: "%.2f", redSlider.value)
+        greenLabel.text     = String(format: "%.2f", greenSlider.value)
+        blueLabel.text      = String(format: "%.2f", blueSlider.value)
+        
+        redTextField.text   = String(format: "%.2f", redSlider.value)
+        greenTextField.text = String(format: "%.2f", greenSlider.value)
+        blueTextField.text  = String(format: "%.2f", blueSlider.value)
+        
+        redTextField.resignFirstResponder()
+        greenTextField.resignFirstResponder()
+        blueTextField.resignFirstResponder()
+        
+        changeableColorView.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: 1)
     }
 }
