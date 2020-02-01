@@ -37,6 +37,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC91E7023E4C95E000CC053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3EFE651D23E3701F008B4835 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3EC91E7123E4C96B000CC053 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				3EFE651923E3701F008B4835 /* AppDelegate.swift */,
+				3EFE651B23E3701F008B4835 /* SceneDelegate.swift */,
+				3EFE652223E37022008B4835 /* Assets.xcassets */,
+				3EFE652723E37022008B4835 /* Info.plist */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		3EC91E7223E4C983000CC053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EFE651F23E3701F008B4835 /* Main.storyboard */,
+				3EFE652423E37022008B4835 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3EFE650D23E3701F008B4835 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +84,9 @@
 		3EFE651823E3701F008B4835 /* Lesson2 */ = {
 			isa = PBXGroup;
 			children = (
-				3EFE651923E3701F008B4835 /* AppDelegate.swift */,
-				3EFE651B23E3701F008B4835 /* SceneDelegate.swift */,
-				3EFE651D23E3701F008B4835 /* ViewController.swift */,
-				3EFE651F23E3701F008B4835 /* Main.storyboard */,
-				3EFE652223E37022008B4835 /* Assets.xcassets */,
-				3EFE652423E37022008B4835 /* LaunchScreen.storyboard */,
-				3EFE652723E37022008B4835 /* Info.plist */,
+				3EC91E7223E4C983000CC053 /* View */,
+				3EC91E7023E4C95E000CC053 /* Controller */,
+				3EC91E7123E4C96B000CC053 /* SupportFile */,
 			);
 			path = Lesson2;
 			sourceTree = "<group>";
@@ -286,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/Info.plist;
+				INFOPLIST_FILE = Lesson2/SupportFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/Info.plist;
+				INFOPLIST_FILE = Lesson2/SupportFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

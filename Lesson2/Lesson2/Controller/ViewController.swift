@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         case blueSliderID
     }
     
+    // MARK: - IB Outlets
+    
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
@@ -28,7 +30,9 @@ class ViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    @IBOutlet var changeableColorView: UIView!
+    @IBOutlet var colorView: UIView!
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,37 +40,42 @@ class ViewController: UIViewController {
         configLabels()
         congigTextFields()
         
-        changeableColorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
+        
+        makeDismissKeyboardTapGesture()
     }
+    
+    // MARK: - IB Actions
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
         let currentSliderValue = String(format: "%.2f", sender.value)
         
-        var redOpacity      = CGFloat(redSlider.value)
-        var greenOpacity    = CGFloat(greenSlider.value)
-        var blueOpacity     = CGFloat(blueSlider.value)
+        let redOpacity      = CGFloat(redSlider.value)
+        let greenOpacity    = CGFloat(greenSlider.value)
+        let blueOpacity     = CGFloat(blueSlider.value)
         
         switch sender.accessibilityIdentifier {
         case SliderId.redSliderID.rawValue:
             redLabel.text           = currentSliderValue
             redTextField.text       = currentSliderValue
-            redOpacity              = CGFloat(sender.value)
-            
         case SliderId.greenSliderID.rawValue:
             greenLabel.text         = currentSliderValue
             greenTextField.text     = currentSliderValue
-            greenOpacity            = CGFloat(sender.value)
-            
         case SliderId.blueSliderID.rawValue:
             blueLabel.text          = currentSliderValue
             blueTextField.text      = currentSliderValue
-            blueOpacity             = CGFloat(sender.value)
-            
         default:
             print("Error getting value from slider")
         }
         
-        changeableColorView.backgroundColor = UIColor(red: redOpacity, green: greenOpacity, blue: blueOpacity, alpha: 1)
+        colorView.backgroundColor = UIColor(red: redOpacity, green: greenOpacity, blue: blueOpacity, alpha: 1)
+    }
+    
+    // MARK: - Private methods
+    
+    private func makeDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
 }
 
@@ -109,30 +118,30 @@ extension ViewController {
         greenTextField.keyboardType     = .decimalPad
         blueTextField.keyboardType      = .decimalPad
         
-        addDoneButtonOnDecimalPad()
+        redTextField.clearButtonMode    = .always
+        greenTextField.clearButtonMode  = .always
+        blueTextField.clearButtonMode   = .always
+        
+        redTextField.inputAccessoryView     = makeToolbarOnKeyboard()
+        greenTextField.inputAccessoryView   = makeToolbarOnKeyboard()
+        blueTextField.inputAccessoryView    = makeToolbarOnKeyboard()
     }
 }
 
-// MARK: - Add Done button on decimal pad
+// MARK: - Add Done button on Keyboard
 
 extension ViewController {
     
-    private func addDoneButtonOnDecimalPad() {
-        let toolbar = UIToolbar(frame: CGRect.init())
-
+    private func makeToolbarOnKeyboard() -> UIToolbar {
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 30)))
+        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
 
-        var items = [UIBarButtonItem]()
-        items.append(flexSpace)
-        items.append(doneButton)
-
-        toolbar.items = items
+        toolbar.setItems([flexSpace, doneButton], animated: false)
         toolbar.sizeToFit()
 
-        redTextField.inputAccessoryView     = toolbar
-        greenTextField.inputAccessoryView   = toolbar
-        blueTextField.inputAccessoryView    = toolbar
+        return toolbar
     }
     
     @objc private func doneButtonTapped(_ sender: UIButton) {
@@ -148,10 +157,8 @@ extension ViewController {
         greenTextField.text = String(format: "%.2f", greenSlider.value)
         blueTextField.text  = String(format: "%.2f", blueSlider.value)
         
-        redTextField.resignFirstResponder()
-        greenTextField.resignFirstResponder()
-        blueTextField.resignFirstResponder()
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: 1)
         
-        changeableColorView.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: 1)
+        view.endEditing(true)
     }
 }
