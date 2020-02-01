@@ -10,12 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    enum SliderId: String {
-        case redSliderID
-        case greenSliderID
-        case blueSliderID
-    }
-    
     // MARK: - IB Outlets
     
     @IBOutlet var redSlider: UISlider!
@@ -36,7 +30,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configSliders()
+        configSlider(slider: redSlider, color: .red)
+        configSlider(slider: greenSlider, color: .green)
+        configSlider(slider: blueSlider, color: .blue)
+        
         configLabels()
         congigTextFields()
         
@@ -54,14 +51,14 @@ class ViewController: UIViewController {
         let greenOpacity    = CGFloat(greenSlider.value)
         let blueOpacity     = CGFloat(blueSlider.value)
         
-        switch sender.accessibilityIdentifier {
-        case SliderId.redSliderID.rawValue:
+        switch sender {
+        case redSlider:
             redLabel.text           = currentSliderValue
             redTextField.text       = currentSliderValue
-        case SliderId.greenSliderID.rawValue:
+        case greenSlider:
             greenLabel.text         = currentSliderValue
             greenTextField.text     = currentSliderValue
-        case SliderId.blueSliderID.rawValue:
+        case blueSlider:
             blueLabel.text          = currentSliderValue
             blueTextField.text      = currentSliderValue
         default:
@@ -83,24 +80,11 @@ class ViewController: UIViewController {
 
 extension ViewController {
 
-    private func configSliders() {
-        redSlider.minimumValue              = 0
-        redSlider.maximumValue              = 1
-        redSlider.value                     = 0.5
-        redSlider.minimumTrackTintColor     = .red
-        redSlider.accessibilityIdentifier   = SliderId.redSliderID.rawValue
-        
-        greenSlider.minimumValue            = 0
-        greenSlider.maximumValue            = 1
-        greenSlider.value                   = 0.5
-        greenSlider.minimumTrackTintColor   = .green
-        greenSlider.accessibilityIdentifier = SliderId.greenSliderID.rawValue
-        
-        blueSlider.minimumValue             = 0
-        blueSlider.maximumValue             = 1
-        blueSlider.value                    = 0.5
-        blueSlider.minimumTrackTintColor    = .blue
-        blueSlider.accessibilityIdentifier  = SliderId.blueSliderID.rawValue
+    private func configSlider(slider: UISlider, color: UIColor) {
+        slider.minimumValue              = 0
+        slider.maximumValue              = 1
+        slider.value                     = 0.5
+        slider.minimumTrackTintColor     = color
     }
     
     private func configLabels() {
@@ -145,6 +129,7 @@ extension ViewController {
     }
     
     @objc private func doneButtonTapped(_ sender: UIButton) {
+        
         redSlider.value     = Float(Double(redTextField.text!)!)
         greenSlider.value   = Float(Double(greenTextField.text!)!)
         blueSlider.value    = Float(Double(blueTextField.text!)!)
