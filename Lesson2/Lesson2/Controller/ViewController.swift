@@ -31,21 +31,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configSlider(slider: redSlider, color: .red)
-        configSlider(slider: greenSlider, color: .green)
-        configSlider(slider: blueSlider, color: .blue)
+        redSlider       = configSlider(slider: redSlider, color: .red)
+        greenSlider     = configSlider(slider: greenSlider, color: .green)
+        blueSlider      = configSlider(slider: blueSlider, color: .blue)
+
+        redLabel        = configLabel(label: redLabel, sliderValue: redSlider.value)
+        greenLabel      = configLabel(label: greenLabel, sliderValue: greenSlider.value)
+        blueLabel       = configLabel(label: blueLabel, sliderValue: blueSlider.value)
+
+        redTextField    = configTextField(textField: redTextField, sliderValue: redSlider.value)
+        greenTextField  = configTextField(textField: greenTextField, sliderValue: greenSlider.value)
+        blueTextField   = configTextField(textField: blueTextField, sliderValue: blueSlider.value)
         
-        configLabel(label: redLabel, slider: redSlider)
-        configLabel(label: greenLabel, slider: greenSlider)
-        configLabel(label: blueLabel, slider: blueSlider)
+        redTextField.inputAccessoryView     = makeToolbarOnKeyboard()
+        greenTextField.inputAccessoryView   = makeToolbarOnKeyboard()
+        blueTextField.inputAccessoryView    = makeToolbarOnKeyboard()
         
-        configTextField(textField: redTextField, slider: redSlider)
-        configTextField(textField: greenTextField, slider: greenSlider)
-        configTextField(textField: blueTextField, slider: blueSlider)
+        redTextField.delegate = self
         
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
         
-        makeDismissKeyboardTapGesture()
+        view.makeDismissKeyboardTapGesture()
     }
     
     // MARK: - IB Actions
@@ -74,40 +80,7 @@ class ViewController: UIViewController {
         colorView.backgroundColor = UIColor(red: redOpacity, green: greenOpacity, blue: blueOpacity, alpha: 1)
     }
     
-    // MARK: - Private methods
-    
-    private func makeDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
-}
-
-// MARK: - Setup UI
-
-extension ViewController {
-
-    private func configSlider(slider: UISlider, color: UIColor) {
-        slider.minimumValue              = 0
-        slider.maximumValue              = 1
-        slider.value                     = 0.5
-        slider.minimumTrackTintColor     = color
-    }
-    
-    private func configLabel(label: UILabel, slider: UISlider) {
-        label.text = String(format: "%.f", slider.value)
-    }
-    
-    private func configTextField(textField: UITextField, slider: UISlider) {
-        textField.text                  = String(format: "%.2f", slider.value)
-        textField.keyboardType          = .decimalPad
-        textField.clearButtonMode       = .always
-        textField.inputAccessoryView    = makeToolbarOnKeyboard()
-    }
-}
-
-// MARK: - Add Done button on Keyboard
-
-extension ViewController {
+    // MARK: - Add Done button on Keyboard
     
     private func makeToolbarOnKeyboard() -> UIToolbar {
         let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 30)))
@@ -123,7 +96,6 @@ extension ViewController {
     
     @objc
     private func doneButtonTapped(_ sender: UIButton) {
-        
         redSlider.value     = Float(Double(redTextField.text!)!)
         greenSlider.value   = Float(Double(greenTextField.text!)!)
         blueSlider.value    = Float(Double(blueTextField.text!)!)
@@ -139,5 +111,37 @@ extension ViewController {
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: 1)
         
         view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = redTextField.text else { return }
+        
+        redTextField.text = text.replacingOccurrences(of: ",", with: ".")
+        
+        if countSpecificChar(textField: redTextField.text!, char: ".") > 1 {
+            redTextField.text!.removeLast()
+        }
+
+        if text.count > 4 {
+            redTextField.text!.removeLast()
+            return
+        }
+    }
+    
+    func countSpecificChar(textField: String, char: Character) -> Int {
+        let letters = Array(textField)
+        var count = 0
+        
+        for letter in letters {
+            if letter == char {
+                count += 1
+            }
+        }
+        
+        return count
     }
 }

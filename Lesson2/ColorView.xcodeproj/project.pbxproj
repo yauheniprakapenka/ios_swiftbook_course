@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */; };
+		3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */; };
 		3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651923E3701F008B4835 /* AppDelegate.swift */; };
 		3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651B23E3701F008B4835 /* SceneDelegate.swift */; };
 		3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651D23E3701F008B4835 /* ViewController.swift */; };
@@ -16,7 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EFE651623E3701F008B4835 /* Lesson2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
+		3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomView.swift"; sourceTree = "<group>"; };
+		3EFE651623E3701F008B4835 /* ColorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFE651923E3701F008B4835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFE651B23E3701F008B4835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3EFE651D23E3701F008B4835 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3EC91E8123E5A1A4000CC053 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */,
+				3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		3EFE650D23E3701F008B4835 = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +89,7 @@
 		3EFE651723E3701F008B4835 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EFE651623E3701F008B4835 /* Lesson2.app */,
+				3EFE651623E3701F008B4835 /* ColorView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +97,7 @@
 		3EFE651823E3701F008B4835 /* Lesson2 */ = {
 			isa = PBXGroup;
 			children = (
+				3EC91E8123E5A1A4000CC053 /* Extension */,
 				3EC91E7223E4C983000CC053 /* View */,
 				3EC91E7023E4C95E000CC053 /* Controller */,
 				3EC91E7123E4C96B000CC053 /* SupportFile */,
@@ -94,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EFE651523E3701F008B4835 /* Lesson2 */ = {
+		3EFE651523E3701F008B4835 /* ColorView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EFE652A23E37022008B4835 /* Build configuration list for PBXNativeTarget "Lesson2" */;
+			buildConfigurationList = 3EFE652A23E37022008B4835 /* Build configuration list for PBXNativeTarget "ColorView" */;
 			buildPhases = (
 				3EFE651223E3701F008B4835 /* Sources */,
 				3EFE651323E3701F008B4835 /* Frameworks */,
@@ -106,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = Lesson2;
+			name = ColorView;
 			productName = Lesson2;
-			productReference = 3EFE651623E3701F008B4835 /* Lesson2.app */;
+			productReference = 3EFE651623E3701F008B4835 /* ColorView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3EFE651123E3701F008B4835 /* Build configuration list for PBXProject "Lesson2" */;
+			buildConfigurationList = 3EFE651123E3701F008B4835 /* Build configuration list for PBXProject "ColorView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +153,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EFE651523E3701F008B4835 /* Lesson2 */,
+				3EFE651523E3701F008B4835 /* ColorView */,
 			);
 		};
 /* End PBXProject section */
@@ -165,6 +179,8 @@
 				3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */,
 				3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */,
 				3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */,
+				3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */,
+				3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yauheniprakapenka.Lesson2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ColorView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yauheniprakapenka.Lesson2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ColorView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -343,7 +359,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EFE651123E3701F008B4835 /* Build configuration list for PBXProject "Lesson2" */ = {
+		3EFE651123E3701F008B4835 /* Build configuration list for PBXProject "ColorView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EFE652823E37022008B4835 /* Debug */,
@@ -352,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EFE652A23E37022008B4835 /* Build configuration list for PBXNativeTarget "Lesson2" */ = {
+		3EFE652A23E37022008B4835 /* Build configuration list for PBXNativeTarget "ColorView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EFE652B23E37022008B4835 /* Debug */,
