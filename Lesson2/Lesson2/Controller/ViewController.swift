@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet var blueTextField: UITextField!
     
     @IBOutlet var colorView: UIView!
+    @IBOutlet var validateView: UILabel!
     
     // MARK: - Life Cycle
     
@@ -99,7 +100,16 @@ class ViewController: UIViewController {
     @objc
     private func doneButtonTapped(_ sender: UIButton) {
         
-        guard let redField = redTextField.text, let greenField = greenTextField.text, let blueField = blueTextField.text, !redField.isEmpty && !greenField.isEmpty && !blueField.isEmpty else { return }
+        guard let redField = redTextField.text, let greenField = greenTextField.text, let blueField = blueTextField.text, !redField.isEmpty && !greenField.isEmpty && !blueField.isEmpty else {
+            validateView.textColor = .red
+            
+            Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { [weak self] _ in
+                self?.validateView.textColor = .darkGray
+            }
+            
+            validateView.shake()
+            return
+        }
         
         redSlider.value     = Float(Double(redTextField.text!)!)
         greenSlider.value   = Float(Double(greenTextField.text!)!)

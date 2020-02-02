@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */; };
+		3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EE023E708AB00E25016 /* UIView+Shake.swift */; };
 		3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */; };
 		3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */; };
 		3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651923E3701F008B4835 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidation.swift; sourceTree = "<group>"; };
+		3EB83EE023E708AB00E25016 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
 		3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigView.swift"; sourceTree = "<group>"; };
 		3EFE651623E3701F008B4835 /* ColorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 			children = (
 				3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */,
 				3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */,
+				3EB83EE023E708AB00E25016 /* UIView+Shake.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */,
 				3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */,
 				3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */,
+				3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */,
 				3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */,
 				3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */,
 				3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */,
