@@ -31,21 +31,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redSlider       = configSlider(slider: redSlider, color: .red)
-        greenSlider     = configSlider(slider: greenSlider, color: .green)
-        blueSlider      = configSlider(slider: blueSlider, color: .blue)
+        redSlider      = configSlider(slider: redSlider, color: .red)
+        greenSlider    = configSlider(slider: greenSlider, color: .green)
+        blueSlider     = configSlider(slider: blueSlider, color: .blue)
 
-        redLabel        = configLabel(label: redLabel, sliderValue: redSlider.value)
-        greenLabel      = configLabel(label: greenLabel, sliderValue: greenSlider.value)
-        blueLabel       = configLabel(label: blueLabel, sliderValue: blueSlider.value)
+        redLabel       = configLabel(label: redLabel, sliderValue: redSlider.value)
+        greenLabel     = configLabel(label: greenLabel, sliderValue: greenSlider.value)
+        blueLabel      = configLabel(label: blueLabel, sliderValue: blueSlider.value)
 
-        redTextField    = configTextField(textField: redTextField, sliderValue: redSlider.value)
-        greenTextField  = configTextField(textField: greenTextField, sliderValue: greenSlider.value)
-        blueTextField   = configTextField(textField: blueTextField, sliderValue: blueSlider.value)
+        redTextField   = configTextField(textField: redTextField, sliderValue: redSlider.value)
+        greenTextField = configTextField(textField: greenTextField, sliderValue: greenSlider.value)
+        blueTextField  = configTextField(textField: blueTextField, sliderValue: blueSlider.value)
         
-        redTextField.inputAccessoryView     = makeToolbarOnKeyboard()
-        greenTextField.inputAccessoryView   = makeToolbarOnKeyboard()
-        blueTextField.inputAccessoryView    = makeToolbarOnKeyboard()
+        redTextField.inputAccessoryView   = makeToolbarOnKeyboard()
+        greenTextField.inputAccessoryView = makeToolbarOnKeyboard()
+        blueTextField.inputAccessoryView  = makeToolbarOnKeyboard()
         
         redTextField.delegate   = self
         greenTextField.delegate = self
@@ -61,20 +61,20 @@ class ViewController: UIViewController {
     @IBAction func valueSliderChanged(_ sender: UISlider) {
         let currentSliderValue = String(format: "%.2f", sender.value)
         
-        let redOpacity      = CGFloat(redSlider.value)
-        let greenOpacity    = CGFloat(greenSlider.value)
-        let blueOpacity     = CGFloat(blueSlider.value)
+        let redOpacity   = CGFloat(redSlider.value)
+        let greenOpacity = CGFloat(greenSlider.value)
+        let blueOpacity  = CGFloat(blueSlider.value)
         
         switch sender {
         case redSlider:
-            redLabel.text           = currentSliderValue
-            redTextField.text       = currentSliderValue
+            redLabel.text       = currentSliderValue
+            redTextField.text   = currentSliderValue
         case greenSlider:
-            greenLabel.text         = currentSliderValue
-            greenTextField.text     = currentSliderValue
+            greenLabel.text     = currentSliderValue
+            greenTextField.text = currentSliderValue
         case blueSlider:
-            blueLabel.text          = currentSliderValue
-            blueTextField.text      = currentSliderValue
+            blueLabel.text      = currentSliderValue
+            blueTextField.text  = currentSliderValue
         default:
             print("Error getting value from slider")
         }
@@ -98,6 +98,9 @@ class ViewController: UIViewController {
     
     @objc
     private func doneButtonTapped(_ sender: UIButton) {
+        
+        guard let redField = redTextField.text, let greenField = greenTextField.text, let blueField = blueTextField.text, !redField.isEmpty && !greenField.isEmpty && !blueField.isEmpty else { return }
+        
         redSlider.value     = Float(Double(redTextField.text!)!)
         greenSlider.value   = Float(Double(greenTextField.text!)!)
         blueSlider.value    = Float(Double(blueTextField.text!)!)
@@ -120,36 +123,8 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
-        guard let text = textField.text else { return }
-        
-        textField.text = text.replacingOccurrences(of: ",", with: ".")
-        textField.text = text.replacingOccurrences(of: "00", with: "0")
-        
-        if textField.text!.first == "." { 
-            textField.text = "0."
-        }
-        
-        if countSpecificChar(textField: textField.text!, char: ".") > 1 {
-            textField.text!.removeLast()
-        }
 
-        if text.count > 4 {
-            textField.text!.removeLast()
-            return
-        }
-    }
-    
-    func countSpecificChar(textField: String, char: Character) -> Int {
-        let letters = Array(textField)
-        var count = 0
-        
-        for letter in letters {
-            if letter == char {
-                count += 1
-            }
-        }
-        
-        return count
+        let validation = TextFieldValidation()
+        textField.text = validation.validateData(text: textField.text!)
     }
 }

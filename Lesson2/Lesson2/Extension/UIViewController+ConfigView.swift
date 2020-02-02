@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func configLabel(label: UILabel, sliderValue: Float) -> UILabel {
         label.text = String(format: "%.2f", sliderValue)
         
@@ -31,4 +32,5 @@ extension UIViewController {
         
         return slider
     }
+    
 }
