@@ -47,7 +47,9 @@ class ViewController: UIViewController {
         greenTextField.inputAccessoryView   = makeToolbarOnKeyboard()
         blueTextField.inputAccessoryView    = makeToolbarOnKeyboard()
         
-        redTextField.delegate = self
+        redTextField.delegate   = self
+        greenTextField.delegate = self
+        blueTextField.delegate  = self
         
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
         
@@ -118,16 +120,22 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let text = redTextField.text else { return }
         
-        redTextField.text = text.replacingOccurrences(of: ",", with: ".")
+        guard let text = textField.text else { return }
         
-        if countSpecificChar(textField: redTextField.text!, char: ".") > 1 {
-            redTextField.text!.removeLast()
+        textField.text = text.replacingOccurrences(of: ",", with: ".")
+        textField.text = text.replacingOccurrences(of: "00", with: "0")
+        
+        if textField.text!.first == "." { 
+            textField.text = "0."
+        }
+        
+        if countSpecificChar(textField: textField.text!, char: ".") > 1 {
+            textField.text!.removeLast()
         }
 
         if text.count > 4 {
-            redTextField.text!.removeLast()
+            textField.text!.removeLast()
             return
         }
     }
