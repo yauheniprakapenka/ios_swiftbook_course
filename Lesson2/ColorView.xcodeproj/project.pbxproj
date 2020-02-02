@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */; };
-		3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */; };
+		3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */; };
 		3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651923E3701F008B4835 /* AppDelegate.swift */; };
 		3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651B23E3701F008B4835 /* SceneDelegate.swift */; };
 		3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651D23E3701F008B4835 /* ViewController.swift */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
-		3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomView.swift"; sourceTree = "<group>"; };
+		3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigView.swift"; sourceTree = "<group>"; };
 		3EFE651623E3701F008B4835 /* ColorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFE651923E3701F008B4835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFE651B23E3701F008B4835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */,
-				3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */,
+				3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */,
 				3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */,
 				3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */,
-				3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */,
+				3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */,
 				3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

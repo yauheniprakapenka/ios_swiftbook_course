@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lesson2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,13 +129,21 @@
                                     <constraint firstAttribute="height" constant="118" id="U7b-ND-JBQ"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите число от 0 до 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9C-Q3-ETV">
+                                <rect key="frame" x="111.33333333333333" y="422" width="191.33333333333337" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="K9C-Q3-ETV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7M4-Ae-wR0"/>
                             <constraint firstItem="WMf-dj-NZB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9BI-Gz-SqI"/>
                             <constraint firstItem="Yjh-jD-LRd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9gT-Ms-dbz"/>
                             <constraint firstItem="Yjh-jD-LRd" firstAttribute="top" secondItem="WMf-dj-NZB" secondAttribute="bottom" constant="40" id="Nph-Lk-BjD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WMf-dj-NZB" secondAttribute="trailing" constant="16" id="e1P-RE-HWd"/>
+                            <constraint firstItem="K9C-Q3-ETV" firstAttribute="top" secondItem="Yjh-jD-LRd" secondAttribute="bottom" constant="40" id="onV-8Z-0fR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yjh-jD-LRd" secondAttribute="trailing" constant="16" id="wFd-ds-Z5p"/>
                             <constraint firstItem="WMf-dj-NZB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="zEL-5n-SH9"/>
                         </constraints>
