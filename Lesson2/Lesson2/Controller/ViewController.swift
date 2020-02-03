@@ -101,13 +101,14 @@ class ViewController: UIViewController {
     private func doneButtonTapped(_ sender: UIButton) {
         
         guard let redField = redTextField.text, let greenField = greenTextField.text, let blueField = blueTextField.text, !redField.isEmpty && !greenField.isEmpty && !blueField.isEmpty else {
-            validateLabel.textColor = .red
             
-            Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { [weak self] _ in
-                self?.validateLabel.textColor = .darkGray
+            validateLabel.shake() {
+                self.validateLabel.textColor = .red
+                Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { [weak self] _ in
+                    self?.validateLabel.textColor = .darkGray
+                }
             }
             
-            validateLabel.shake()
             return
         }
         
