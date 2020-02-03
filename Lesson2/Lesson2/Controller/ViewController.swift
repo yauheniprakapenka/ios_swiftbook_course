@@ -129,6 +129,8 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // MARK: - Configure Views
+    
     private func configSlider(slider: UISlider, color: UIColor) -> UISlider {
         slider.minimumValue          = 0
         slider.maximumValue          = 1
