@@ -13,8 +13,6 @@ struct TextFieldValidation {
     func validateData(text: String) -> String {
         
         var newText = text
-        
-        newText = text.replacingOccurrences(of: ",", with: ".")
         newText = text.replacingOccurrences(of: "00", with: "0")
         
         if newText.first == "." {

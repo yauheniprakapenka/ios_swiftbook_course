@@ -66,6 +66,10 @@ class ViewController: UIViewController {
         colorView.backgroundColor = UIColor(red: redOpacity, green: greenOpacity, blue: blueOpacity, alpha: 1)
     }
     
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        sender.text = TextFieldValidation().validateData(text: sender.text!)
+    }
+    
     // MARK: - Add Done button on Keyboard
     
     private func makeToolbarOnKeyboard() -> UIToolbar {
@@ -123,25 +127,11 @@ class ViewController: UIViewController {
         redTextField.inputAccessoryView   = makeToolbarOnKeyboard()
         greenTextField.inputAccessoryView = makeToolbarOnKeyboard()
         blueTextField.inputAccessoryView  = makeToolbarOnKeyboard()
-        
-        redTextField.delegate   = self
-        greenTextField.delegate = self
-        blueTextField.delegate  = self
     }
     
     private func configureLabels() {
         redLabel.text   = String(format: Constants.twoCharsAfterDot, redSlider.value)
         greenLabel.text = String(format: Constants.twoCharsAfterDot, greenSlider.value)
         blueLabel.text  = String(format: Constants.twoCharsAfterDot, greenSlider.value)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-
-extension ViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        
-        let validation = TextFieldValidation()
-        textField.text = validation.validateData(text: textField.text!)
     }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */; };
+		3EB83EDF23E6FF7800E25016 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EDE23E6FF7800E25016 /* Validation.swift */; };
 		3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EE023E708AB00E25016 /* UIView+Shake.swift */; };
 		3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */; };
 		3EF0473523E8313000C83297 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0473423E8313000C83297 /* Constants.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidation.swift; sourceTree = "<group>"; };
+		3EB83EDE23E6FF7800E25016 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3EB83EE023E708AB00E25016 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
 		3EF0473423E8313000C83297 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		3EB83EE223E70B9000E25016 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */,
+				3EB83EDE23E6FF7800E25016 /* Validation.swift */,
 				3EF0473423E8313000C83297 /* Constants.swift */,
 			);
 			path = Utilities;
@@ -195,7 +195,7 @@
 				3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */,
 				3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */,
 				3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */,
-				3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */,
+				3EB83EDF23E6FF7800E25016 /* Validation.swift in Sources */,
 				3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
