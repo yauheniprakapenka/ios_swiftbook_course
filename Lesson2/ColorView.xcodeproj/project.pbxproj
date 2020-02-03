@@ -10,7 +10,7 @@
 		3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */; };
 		3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB83EE023E708AB00E25016 /* UIView+Shake.swift */; };
 		3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */; };
-		3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */; };
+		3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */; };
 		3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651923E3701F008B4835 /* AppDelegate.swift */; };
 		3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651B23E3701F008B4835 /* SceneDelegate.swift */; };
 		3EFE651E23E3701F008B4835 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE651D23E3701F008B4835 /* ViewController.swift */; };
@@ -23,7 +23,7 @@
 		3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidation.swift; sourceTree = "<group>"; };
 		3EB83EE023E708AB00E25016 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
-		3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigView.swift"; sourceTree = "<group>"; };
+		3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomView.swift"; sourceTree = "<group>"; };
 		3EFE651623E3701F008B4835 /* ColorView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EFE651923E3701F008B4835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EFE651B23E3701F008B4835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,12 +45,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3EB83EE223E70B9000E25016 /* Utilitie */ = {
+		3EB83EE223E70B9000E25016 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				3EB83EDE23E6FF7800E25016 /* TextFieldValidation.swift */,
 			);
-			path = Utilitie;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		3EC91E7023E4C95E000CC053 /* Controller */ = {
@@ -61,7 +61,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3EC91E7123E4C96B000CC053 /* SupportFile */ = {
+		3EC91E7123E4C96B000CC053 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				3EFE651923E3701F008B4835 /* AppDelegate.swift */,
@@ -69,7 +69,7 @@
 				3EFE652223E37022008B4835 /* Assets.xcassets */,
 				3EFE652723E37022008B4835 /* Info.plist */,
 			);
-			path = SupportFile;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		3EC91E7223E4C983000CC053 /* View */ = {
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC91E8223E5A210000CC053 /* UIView+Keyboard.swift */,
-				3EC91E8623E5E4FA000CC053 /* UIViewController+ConfigView.swift */,
+				3EC91E8623E5E4FA000CC053 /* UIViewController+CustomView.swift */,
 				3EB83EE023E708AB00E25016 /* UIView+Shake.swift */,
 			);
 			path = Extension;
@@ -110,11 +110,11 @@
 		3EFE651823E3701F008B4835 /* Lesson2 */ = {
 			isa = PBXGroup;
 			children = (
-				3EB83EE223E70B9000E25016 /* Utilitie */,
+				3EB83EE223E70B9000E25016 /* Utilities */,
 				3EC91E8123E5A1A4000CC053 /* Extension */,
 				3EC91E7223E4C983000CC053 /* View */,
 				3EC91E7023E4C95E000CC053 /* Controller */,
-				3EC91E7123E4C96B000CC053 /* SupportFile */,
+				3EC91E7123E4C96B000CC053 /* SupportFiles */,
 			);
 			path = Lesson2;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 				3EFE651A23E3701F008B4835 /* AppDelegate.swift in Sources */,
 				3EFE651C23E3701F008B4835 /* SceneDelegate.swift in Sources */,
 				3EB83EE123E708AB00E25016 /* UIView+Shake.swift in Sources */,
-				3EC91E8723E5E4FA000CC053 /* UIViewController+ConfigView.swift in Sources */,
+				3EC91E8723E5E4FA000CC053 /* UIViewController+CustomView.swift in Sources */,
 				3EB83EDF23E6FF7800E25016 /* TextFieldValidation.swift in Sources */,
 				3EC91E8323E5A210000CC053 /* UIView+Keyboard.swift in Sources */,
 			);
@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/SupportFile/Info.plist;
+				INFOPLIST_FILE = Lesson2/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/SupportFile/Info.plist;
+				INFOPLIST_FILE = Lesson2/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
