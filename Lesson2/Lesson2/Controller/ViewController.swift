@@ -35,11 +35,11 @@ class ViewController: UIViewController {
         redSlider      = configSlider(slider: redSlider, color: .red)
         greenSlider    = configSlider(slider: greenSlider, color: .green)
         blueSlider     = configSlider(slider: blueSlider, color: .blue)
-
+        
         redLabel       = configLabel(label: redLabel, sliderValue: redSlider.value)
         greenLabel     = configLabel(label: greenLabel, sliderValue: greenSlider.value)
         blueLabel      = configLabel(label: blueLabel, sliderValue: blueSlider.value)
-
+        
         redTextField   = configTextField(textField: redTextField, sliderValue: redSlider.value)
         greenTextField = configTextField(textField: greenTextField, sliderValue: greenSlider.value)
         blueTextField  = configTextField(textField: blueTextField, sliderValue: blueSlider.value)
@@ -86,14 +86,14 @@ class ViewController: UIViewController {
     // MARK: - Add Done button on Keyboard
     
     private func makeToolbarOnKeyboard() -> UIToolbar {
-        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 30)))
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 0)))
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
-
+        
         toolbar.setItems([flexibleSpace, doneButton], animated: false)
-//        toolbar.sizeToFit()
-
+        toolbar.sizeToFit()
+        
         return toolbar
     }
     
@@ -124,9 +124,32 @@ class ViewController: UIViewController {
         greenTextField.text = String(format: "%.2f", greenSlider.value)
         blueTextField.text  = String(format: "%.2f", blueSlider.value)
         
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: 1)
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         
         view.endEditing(true)
+    }
+    
+    private func configSlider(slider: UISlider, color: UIColor) -> UISlider {
+        slider.minimumValue          = 0
+        slider.maximumValue          = 1
+        slider.value                 = 0.3
+        slider.minimumTrackTintColor = color
+        
+        return slider
+    }
+    
+    private func configTextField(textField: UITextField, sliderValue: Float) -> UITextField {
+        textField.text          = String(format: "%.2f", sliderValue)
+        textField.keyboardType  = .decimalPad
+        textField.textAlignment = .right
+        
+        return textField
+    }
+    
+    private func configLabel(label: UILabel, sliderValue: Float) -> UILabel {
+        label.text = String(format: "%.2f", sliderValue)
+        
+        return label
     }
 }
 
@@ -134,7 +157,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-
+        
         let validation = TextFieldValidation()
         textField.text = validation.validateData(text: textField.text!)
     }
