@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     // MARK: - IB Actions
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
-        let currentSliderValue = String(format: "%.2f", sender.value)
+        let currentSliderValue = String(format: Format.twoCharsAfterDot, sender.value)
         
         let redOpacity   = CGFloat(redSlider.value)
         let greenOpacity = CGFloat(greenSlider.value)
@@ -116,13 +116,13 @@ class ViewController: UIViewController {
         greenSlider.value   = Float(greenTextField.text!)!
         blueSlider.value    = Float(blueTextField.text!)!
         
-        redLabel.text       = String(format: "%.2f", redSlider.value)
-        greenLabel.text     = String(format: "%.2f", greenSlider.value)
-        blueLabel.text      = String(format: "%.2f", blueSlider.value)
+        redLabel.text       = String(format: Format.twoCharsAfterDot, redSlider.value)
+        greenLabel.text     = String(format: Format.twoCharsAfterDot, greenSlider.value)
+        blueLabel.text      = String(format: Format.twoCharsAfterDot, blueSlider.value)
         
-        redTextField.text   = String(format: "%.2f", redSlider.value)
-        greenTextField.text = String(format: "%.2f", greenSlider.value)
-        blueTextField.text  = String(format: "%.2f", blueSlider.value)
+        redTextField.text   = String(format: Format.twoCharsAfterDot, redSlider.value)
+        greenTextField.text = String(format: Format.twoCharsAfterDot, greenSlider.value)
+        blueTextField.text  = String(format: Format.twoCharsAfterDot, blueSlider.value)
         
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
     }
     
     private func configTextField(textField: UITextField, sliderValue: Float) -> UITextField {
-        textField.text          = String(format: "%.2f", sliderValue)
+        textField.text          = String(format: Format.twoCharsAfterDot, sliderValue)
         textField.keyboardType  = .decimalPad
         textField.textAlignment = .right
         
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     private func configLabel(label: UILabel, sliderValue: Float) -> UILabel {
-        label.text = String(format: "%.2f", sliderValue)
+        label.text = String(format: Format.twoCharsAfterDot, sliderValue)
         
         return label
     }
