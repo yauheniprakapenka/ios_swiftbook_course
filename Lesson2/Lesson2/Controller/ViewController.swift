@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
 
         toolbar.setItems([flexibleSpace, doneButton], animated: false)
-        toolbar.sizeToFit()
+//        toolbar.sizeToFit()
 
         return toolbar
     }
@@ -112,9 +112,9 @@ class ViewController: UIViewController {
             return
         }
         
-        redSlider.value     = Float(Double(redTextField.text!)!)
-        greenSlider.value   = Float(Double(greenTextField.text!)!)
-        blueSlider.value    = Float(Double(blueTextField.text!)!)
+        redSlider.value     = Float(redTextField.text!)!
+        greenSlider.value   = Float(greenTextField.text!)!
+        blueSlider.value    = Float(blueTextField.text!)!
         
         redLabel.text       = String(format: "%.2f", redSlider.value)
         greenLabel.text     = String(format: "%.2f", greenSlider.value)
