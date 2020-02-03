@@ -1,5 +1,5 @@
 //
-//  Constant.swift
+//  Constants.swift
 //  ColorView
 //
 //  Created by yauheni prakapenka on 03.02.2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Format {
+enum Constants {
     static let twoCharsAfterDot = "%.2f"
 }

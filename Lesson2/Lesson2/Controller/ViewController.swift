@@ -32,25 +32,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redSlider      = configSlider(slider: redSlider, color: .red)
-        greenSlider    = configSlider(slider: greenSlider, color: .green)
-        blueSlider     = configSlider(slider: blueSlider, color: .blue)
-        
-        redLabel       = configLabel(label: redLabel, sliderValue: redSlider.value)
-        greenLabel     = configLabel(label: greenLabel, sliderValue: greenSlider.value)
-        blueLabel      = configLabel(label: blueLabel, sliderValue: blueSlider.value)
-        
-        redTextField   = configTextField(textField: redTextField, sliderValue: redSlider.value)
-        greenTextField = configTextField(textField: greenTextField, sliderValue: greenSlider.value)
-        blueTextField  = configTextField(textField: blueTextField, sliderValue: blueSlider.value)
-        
-        redTextField.inputAccessoryView   = makeToolbarOnKeyboard()
-        greenTextField.inputAccessoryView = makeToolbarOnKeyboard()
-        blueTextField.inputAccessoryView  = makeToolbarOnKeyboard()
-        
-        redTextField.delegate   = self
-        greenTextField.delegate = self
-        blueTextField.delegate  = self
+        configuteTextFields()
+        configureLabels()
         
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(redSlider.value), alpha: 1)
         
@@ -60,7 +43,7 @@ class ViewController: UIViewController {
     // MARK: - IB Actions
     
     @IBAction func valueSliderChanged(_ sender: UISlider) {
-        let currentSliderValue = String(format: Format.twoCharsAfterDot, sender.value)
+        let currentSliderValue = String(format: Constants.twoCharsAfterDot, sender.value)
         
         let redOpacity   = CGFloat(redSlider.value)
         let greenOpacity = CGFloat(greenSlider.value)
@@ -104,6 +87,7 @@ class ViewController: UIViewController {
             
             validateLabel.shake() {
                 self.validateLabel.textColor = .red
+                
                 Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { [weak self] _ in
                     self?.validateLabel.textColor = .darkGray
                 }
@@ -112,17 +96,17 @@ class ViewController: UIViewController {
             return
         }
         
-        redSlider.value     = Float(redTextField.text!)!
-        greenSlider.value   = Float(greenTextField.text!)!
-        blueSlider.value    = Float(blueTextField.text!)!
+        redSlider.value   = Float(redTextField.text!)!
+        greenSlider.value = Float(greenTextField.text!)!
+        blueSlider.value  = Float(blueTextField.text!)!
         
-        redLabel.text       = String(format: Format.twoCharsAfterDot, redSlider.value)
-        greenLabel.text     = String(format: Format.twoCharsAfterDot, greenSlider.value)
-        blueLabel.text      = String(format: Format.twoCharsAfterDot, blueSlider.value)
+        redLabel.text   = String(format: Constants.twoCharsAfterDot, redSlider.value)
+        greenLabel.text = String(format: Constants.twoCharsAfterDot, greenSlider.value)
+        blueLabel.text  = String(format: Constants.twoCharsAfterDot, blueSlider.value)
         
-        redTextField.text   = String(format: Format.twoCharsAfterDot, redSlider.value)
-        greenTextField.text = String(format: Format.twoCharsAfterDot, greenSlider.value)
-        blueTextField.text  = String(format: Format.twoCharsAfterDot, blueSlider.value)
+        redTextField.text   = String(format: Constants.twoCharsAfterDot, redSlider.value)
+        greenTextField.text = String(format: Constants.twoCharsAfterDot, greenSlider.value)
+        blueTextField.text  = String(format: Constants.twoCharsAfterDot, blueSlider.value)
         
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         
@@ -131,27 +115,24 @@ class ViewController: UIViewController {
     
     // MARK: - Configure Views
     
-    private func configSlider(slider: UISlider, color: UIColor) -> UISlider {
-        slider.minimumValue          = 0
-        slider.maximumValue          = 1
-        slider.value                 = 0.3
-        slider.minimumTrackTintColor = color
+    private func configuteTextFields() {
+        redTextField.text   = String(format: Constants.twoCharsAfterDot, redSlider.value)
+        greenTextField.text = String(format: Constants.twoCharsAfterDot, greenSlider.value)
+        blueTextField.text  = String(format: Constants.twoCharsAfterDot, blueSlider.value)
         
-        return slider
+        redTextField.inputAccessoryView   = makeToolbarOnKeyboard()
+        greenTextField.inputAccessoryView = makeToolbarOnKeyboard()
+        blueTextField.inputAccessoryView  = makeToolbarOnKeyboard()
+        
+        redTextField.delegate   = self
+        greenTextField.delegate = self
+        blueTextField.delegate  = self
     }
     
-    private func configTextField(textField: UITextField, sliderValue: Float) -> UITextField {
-        textField.text          = String(format: Format.twoCharsAfterDot, sliderValue)
-        textField.keyboardType  = .decimalPad
-        textField.textAlignment = .right
-        
-        return textField
-    }
-    
-    private func configLabel(label: UILabel, sliderValue: Float) -> UILabel {
-        label.text = String(format: Format.twoCharsAfterDot, sliderValue)
-        
-        return label
+    private func configureLabels() {
+        redLabel.text   = String(format: Constants.twoCharsAfterDot, redSlider.value)
+        greenLabel.text = String(format: Constants.twoCharsAfterDot, greenSlider.value)
+        blueLabel.text  = String(format: Constants.twoCharsAfterDot, greenSlider.value)
     }
 }
 
