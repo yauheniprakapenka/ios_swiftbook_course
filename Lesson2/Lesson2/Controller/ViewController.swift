@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     // MARK: - Add Done button on Keyboard
     
     private func makeToolbarOnKeyboard() -> UIToolbar {
-        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 0)))
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.width, height: 30)))
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
