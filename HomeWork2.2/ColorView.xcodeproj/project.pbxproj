@@ -94,7 +94,7 @@
 		3EFE650D23E3701F008B4835 = {
 			isa = PBXGroup;
 			children = (
-				3EFE651823E3701F008B4835 /* Lesson2 */,
+				3EFE651823E3701F008B4835 /* ColorView */,
 				3EFE651723E3701F008B4835 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3EFE651823E3701F008B4835 /* Lesson2 */ = {
+		3EFE651823E3701F008B4835 /* ColorView */ = {
 			isa = PBXGroup;
 			children = (
 				3EB83EE223E70B9000E25016 /* Utilities */,
@@ -116,7 +116,7 @@
 				3EC91E7023E4C95E000CC053 /* Controller */,
 				3EC91E7123E4C96B000CC053 /* SupportFiles */,
 			);
-			path = Lesson2;
+			path = ColorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/SupportFiles/Info.plist;
+				INFOPLIST_FILE = ColorView/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = Lesson2/SupportFiles/Info.plist;
+				INFOPLIST_FILE = ColorView/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
