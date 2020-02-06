@@ -4,7 +4,10 @@
  Создайте коллекцию типа [Any], включающую несколько вещественных чисел, целых, строк и булевых значений.  Распечатайте содержимое коллекции.
  */
 let items: [Any] = [1.11, 4.44, 7.77, 2, 3, 8, "dog", "swift", "owl", 2 + 3 == 5, "android" == "ios", true]
-print(items)
+
+for item in items {
+    print(item)
+}
 
 print("\n")
 /*:
@@ -20,9 +23,9 @@ for item in items {
     case is String:
         print("Строка: \(item)")
     case is Bool:
-         print("Булево значение: \(item)")
+        print(item)
     default:
-        print("Неизвестный элемент коллекции: \(item)")
+        print("Неизвестный элемент коллекции \(item)")
     }
     
 }
@@ -32,7 +35,7 @@ print("\n")
  Создайте словарь [String : Any], где все значения — это смесь вещественных и целых чисел, строк и булевых значений.  Выведите пары ключ/значения для всех элементов коллекции.
  */
 let myBMW: [String: Any] = ["Model": "BMW E39",
-                            "Body": "Sedan",
+                            "Body": "2",
                             "Year": 1990,
                             "Wheels": 4,
                             "overclockTo100km": 8.1,
@@ -40,7 +43,9 @@ let myBMW: [String: Any] = ["Model": "BMW E39",
                             "secondHands": true,
                             "crash": false]
 
-print(myBMW)
+for (key, value) in myBMW {
+    print("\(key): \(value)")
+}
 
 print("\n")
 /*:
@@ -48,7 +53,7 @@ print("\n")
  */
 var total: Double = 0
 
-for (key, value) in myBMW {
+for (_, value) in myBMW {
 
     if let string = value as? String {
         total += 1
@@ -63,4 +68,23 @@ for (key, value) in myBMW {
 
 print(total)
 
+print("\n")
+/*:
+ Обнулите переменную total и снова пройдите по всей коллекции, прибавляя к ней все целые и вещественные числа.  Для каждой строки, встретившейся на пути, попробуйте сконвертировать её в число, и добавьте это значение к общему.  Игнорируйте булевы значения.  Распечатайте итог.
+ */
+total = 0
+
+for (_, value) in myBMW {
+    
+    if let intValue = value as? Int {
+        total += Double(intValue)
+    } else if let doubleValue = value as? Double {
+        total += doubleValue
+    } else if let stringValue = value as? String {
+        let new = Double(stringValue) ?? 0
+        total += new
+    }
+}
+
+print(total)
 //: страница 1 из 2  |  [Далее: упражнение для приложения - типы тренировок](@next)
