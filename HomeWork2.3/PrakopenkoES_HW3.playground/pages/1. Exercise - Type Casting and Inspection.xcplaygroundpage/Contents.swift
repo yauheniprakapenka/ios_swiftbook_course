@@ -33,6 +33,7 @@ for item in items {
 print("\n")
 
 for item in items {
+    
     if let item = item as? Int {
         print("\(item) is Integer")
     } else if let item = item as? String {
@@ -41,6 +42,25 @@ for item in items {
         print("\(item) is Bool")
     } else if let item = item as? Double {
         print("\(item) is Double")
+    }
+    
+}
+
+print("\n")
+
+items.forEach { item in
+    
+    switch item {
+    case let item as Int:
+        print("\(item) is Integer")
+    case let item as Double:
+        print("\(item) is Double")
+    case let item as String:
+        print("\(item) is String")
+    case let item as Bool:
+        print("\(item) is Double")
+    default:
+        break
     }
 }
 
@@ -76,6 +96,7 @@ print("\n")
 var total = 0.0
 
 for (_, value) in myBMW {
+    
     if let value = value as? Int {
         total += Double(value)
     } else if let value = value as? Double {
@@ -85,6 +106,7 @@ for (_, value) in myBMW {
     } else if let value = value as? Bool {
         total += value ? 2 : -3
     }
+    
 }
 
 print(total)
@@ -126,6 +148,26 @@ for (_, value) in myBMW {
         if let number = Double(value) {
             total += number
         }
+    }
+}
+
+print(total)
+
+total = 0
+
+myBMW.forEach { _, value in
+    
+    switch value {
+    case let value as Int:
+        total += Double(value)
+    case let value as Double:
+        total += value
+    case let value as String:
+        if let number = Double(value) {
+            total += number
+        }
+    default:
+        break
     }
 }
 
