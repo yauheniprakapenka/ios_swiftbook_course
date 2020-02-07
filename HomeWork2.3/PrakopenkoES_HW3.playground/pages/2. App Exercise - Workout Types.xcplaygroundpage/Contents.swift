@@ -63,12 +63,22 @@ for workout in workouts {
         describeRun(runningWorkout: runningWorkout)
     } else if let swimmingWorkout = workout as? Swim {
         describeSwim(swimmingWorkout: swimmingWorkout)
-    } else {
-        print("Неизвестный тип")
     }
-    
 }
 
+print("\n")
+
+workouts.forEach { workout in
+    
+    switch workout {
+    case let runningWorkout as Run:
+        describeRun(runningWorkout: runningWorkout)
+    case let swimmingWorkout as Swim:
+        describeSwim(swimmingWorkout: swimmingWorkout)
+    default:
+        break
+    }
+}
 /*:
  
  _Copyright © 2017 Apple Inc._

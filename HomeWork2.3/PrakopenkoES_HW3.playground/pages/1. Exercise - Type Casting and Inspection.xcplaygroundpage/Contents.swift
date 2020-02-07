@@ -17,56 +17,98 @@ for item in items {
     
     switch item {
     case is Int:
-        print("Целое число: \(item)")
+        print("\(item) is Integer")
     case is Double:
-        print("Вещественное число: \(item)")
+        print("\(item) is Double")
     case is String:
-        print("Строка: \(item)")
+        print("\(item) is String")
     case is Bool:
-        print(item)
+        print("\(item) is Bool")
     default:
-        print("Неизвестный элемент коллекции \(item)")
+        print("Неизвестное значение: \(item)")
     }
     
+}
+
+print("\n")
+
+for item in items {
+    if let item = item as? Int {
+        print("\(item) is Integer")
+    } else if let item = item as? String {
+        print("\(item) is String")
+    } else if let item = item as? Bool {
+        print("\(item) is Bool")
+    } else if let item = item as? Double {
+        print("\(item) is Double")
+    }
 }
 
 print("\n")
 /*:
  Создайте словарь [String : Any], где все значения — это смесь вещественных и целых чисел, строк и булевых значений.  Выведите пары ключ/значения для всех элементов коллекции.
  */
-let myBMW: [String: Any] = ["Model": "BMW E39",
-                            "Body": "2",
-                            "Year": 1990,
-                            "Wheels": 4,
-                            "overclockTo100km": 8.1,
-                            "Engine": 1.8,
-                            "secondHands": true,
-                            "crash": false]
+let myBMW: [String: Any] = [
+    "Model": "BMW E39",
+    "Body": "2",
+    "Year": 1990,
+    "Wheels": 4,
+    "overclockTo100km": 8.1,
+    "Engine": 1.8,
+    "secondHands": true,
+    "crash": false
+]
 
 for (key, value) in myBMW {
-    print("\(key): \(value)")
+    print("Key: \(key), Value: \(value)")
+}
+
+print("\n")
+
+for item in myBMW {
+    print("Key: \(item.key), Value: \(item.value)")
 }
 
 print("\n")
 /*:
  Создайте переменную `total` типа `Double`, равную 0.  Переберите все значения словаря, и добавьте значение каждого целого и вещественного числа к значению вашей переменной.  Для каждой строки добавьте 1.  Для каждого булева значения, добавьте 2, в случае, если значение равно `true`, либо вычтите 3, если оно `false`.  Напечатайте значение `total`.
  */
-var total: Double = 0
+var total = 0.0
 
 for (_, value) in myBMW {
-
-    if let string = value as? String {
+    if let value = value as? Int {
+        total += Double(value)
+    } else if let value = value as? Double {
+        total += value
+    } else if value is String {
         total += 1
-    } else if let bool = value as? Bool {
-        total = bool ? total + 2.0 : total - 3.0
-    } else if let intValue = value as? Int {
-        total += Double(intValue)
-    } else if let doubleValue = value as? Double {
-        total += doubleValue
+    } else if let value = value as? Bool {
+        total += value ? 2 : -3
     }
 }
 
 print(total)
+
+print("\n")
+
+total = 0
+
+for (_, value) in myBMW {
+    
+    switch value {
+    case let integer as Int:
+        total += Double(integer)
+    case let double as Double:
+        total += double
+    case let _ as String:
+        total += 1
+    case let bool as Bool:
+        total += bool ? 2 : -3
+    default:
+        break
+    }
+    
+}
 
 print("\n")
 /*:
@@ -76,13 +118,14 @@ total = 0
 
 for (_, value) in myBMW {
     
-    if let intValue = value as? Int {
-        total += Double(intValue)
-    } else if let doubleValue = value as? Double {
-        total += doubleValue
-    } else if let stringValue = value as? String {
-        let new = Double(stringValue) ?? 0
-        total += new
+    if let value = value as? Int {
+        total += Double(value)
+    } else if let value = value as? Double {
+        total += value
+    } else if let value = value as? String {
+        if let number = Double(value) {
+            total += number
+        }
     }
 }
 
