@@ -45,6 +45,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         view.makeDissmissKeyboardTap()
+        usernameTextField.text = "chip"
+        passwordTextField.text = "dale"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +57,11 @@ class LoginViewController: UIViewController {
         passwordTextFieldCenterConstraint.constant -= view.bounds.width
         loginButtonHeightConstraint.constant += view.bounds.height
         sunImageViewHeightConstraint.constant += view.bounds.height
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabbarController = segue.destination as! UITabBarController
+        let chipVC = tabbarController.viewControllers?.first as! ChipViewController
     }
     
     // MARK: - IBAction
