@@ -17,6 +17,7 @@
 		3E52DBB623F02EDF0090DE2E /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52DBB523F02EDF0090DE2E /* AlertViewController.swift */; };
 		3E52DBB823F065E40090DE2E /* ChipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52DBB723F065E40090DE2E /* ChipViewController.swift */; };
 		3E52DBBA23F06D110090DE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E52DBB923F06D100090DE2E /* Assets.xcassets */; };
+		3E52DBBC23F08F460090DE2E /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52DBBB23F08F460090DE2E /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3E52DBB523F02EDF0090DE2E /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3E52DBB723F065E40090DE2E /* ChipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipViewController.swift; sourceTree = "<group>"; };
 		3E52DBB923F06D100090DE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E52DBBB23F08F460090DE2E /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				3E52DBB323F01DFC0090DE2E /* User.swift */,
+				3E52DBBB23F08F460090DE2E /* Tip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E52DB9923EF43C80090DE2E /* LoginViewController.swift in Sources */,
+				3E52DBBC23F08F460090DE2E /* Tip.swift in Sources */,
 				3E52DBB823F065E40090DE2E /* ChipViewController.swift in Sources */,
 				3E52DBB623F02EDF0090DE2E /* AlertViewController.swift in Sources */,
 				3E52DBB123EFCCF60090DE2E /* UIView+Keyboard.swift in Sources */,

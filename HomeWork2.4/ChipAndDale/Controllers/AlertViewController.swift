@@ -10,10 +10,13 @@ import UIKit
 
 class AlertViewController: UIViewController {
     
+    var currentTip: Tip?
+    
     // MARK: - IBOutlets
     
     @IBOutlet var containerView: UIView!
-
+    @IBOutlet var tipImageView: UIImageView!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -21,6 +24,17 @@ class AlertViewController: UIViewController {
         
         containerView.layer.cornerRadius = 16
         containerView.clipsToBounds = true
+        
+        switch currentTip {
+        case .name:
+            tipImageView.image = #imageLiteral(resourceName: "NameTip")
+        case .password:
+            tipImageView.image = #imageLiteral(resourceName: "PasswordTip")
+        case .wrong:
+            tipImageView.image = #imageLiteral(resourceName: "WrongAnswer")
+        case .none:
+            break
+        }
     }
     
     // MARK: - IBAction

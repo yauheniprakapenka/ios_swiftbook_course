@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    @IBOutlet var loginButton: UIButton!
+    
     @IBOutlet var headerLabelCenterConstraint: NSLayoutConstraint!
     @IBOutlet var usernameTextFieldCenterConstraint: NSLayoutConstraint!
     @IBOutlet var passwordTextFieldCenterConstraint: NSLayoutConstraint!
@@ -44,6 +46,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginButton.layer.cornerRadius = 16
+        
         view.makeDissmissKeyboardTap()
         usernameTextField.text = "chip"
         passwordTextField.text = "dale"
@@ -59,29 +63,32 @@ class LoginViewController: UIViewController {
         sunImageViewHeightConstraint.constant += view.bounds.height
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabbarController = segue.destination as! UITabBarController
-        let chipVC = tabbarController.viewControllers?.first as! ChipViewController
-    }
-    
     // MARK: - IBAction
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        view.endEditing(true)
         
         let user = User()
         
         guard let username = usernameTextField.text, let password = passwordTextField.text,
             !username.isEmpty && !password.isEmpty else {
-                presentAlertVC()
+                presentAlertVC(tip: .wrong)
                 return
         }
         
         guard usernameTextField.text!.lowercased() == user.name && passwordTextField.text!.lowercased() == user.password else {
-            presentAlertVC()
+            presentAlertVC(tip: .wrong)
             return
         }
-        
-        print("Правильно")
+    }
+    
+    @IBAction func forgetNameButtonTapped(_ sender: Any) {
+        presentAlertVC(tip: .name)
+    }
+    
+    @IBAction func forgetPasswordTapped(_ sender: Any) {
+        presentAlertVC(tip: .password)
     }
     
     // MARK: - Private Methods
@@ -110,11 +117,15 @@ class LoginViewController: UIViewController {
         animateLayout(duration: 1.9, delay: 4.0)
     }
     
-    private func presentAlertVC() {
+    private func presentAlertVC(tip: Tip) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         guard let vc = storyboard.instantiateViewController(identifier: "AlertVC") as? AlertViewController else { return }
+        
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.currentTip = tip
+        
         present(vc, animated: false)
     }
 }
