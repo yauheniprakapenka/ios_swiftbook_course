@@ -7,8 +7,6 @@
 //
 
 struct User {
-    var name: String
-    var password: String
-    
-    static let Users = [User(name: "chip", password: "dale")]
+    let name = "chip"
+    let password = "dale"
 }

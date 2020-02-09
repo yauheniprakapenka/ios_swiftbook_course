@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class LoginViewController: UIViewController, CAAnimationDelegate {
+class LoginViewController: UIViewController {
     
     // MARK: - IBOutlets
     
@@ -20,6 +20,9 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet var sunImageView: UIImageView!
     
     @IBOutlet var backgroundView: UIView!
+    
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var headerLabelCenterConstraint: NSLayoutConstraint!
     @IBOutlet var usernameTextFieldCenterConstraint: NSLayoutConstraint!
@@ -54,6 +57,26 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
         sunImageViewHeightConstraint.constant += view.bounds.height
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        let user = User()
+        
+        guard let username = usernameTextField.text, let password = passwordTextField.text,
+            !username.isEmpty && !password.isEmpty else {
+                presentAlertVC()
+                return
+        }
+        
+        guard usernameTextField.text!.lowercased() == user.name && passwordTextField.text!.lowercased() == user.password else {
+            presentAlertVC()
+            return
+        }
+        
+        print("Правильно")
+    }
+    
     // MARK: - Private Methods
     
     private func animateClouds() {
@@ -79,6 +102,14 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
         loginButtonHeightConstraint.constant = 40
         animateLayout(duration: 1.9, delay: 4.0)
     }
+    
+    private func presentAlertVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "AlertVC") as? AlertViewController else { return }
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: false)
+    }
 }
 
 // MARK: - Animation
@@ -94,16 +125,6 @@ private extension LoginViewController {
         }, completion: nil)
     }
     
-    func animateSun() {
-        let fullRotation = CABasicAnimation(keyPath: "transform.rotation")
-        fullRotation.delegate = self
-        fullRotation.fromValue = NSNumber(floatLiteral: 0)
-        fullRotation.toValue = NSNumber(floatLiteral: Double(CGFloat.pi * 2))
-        fullRotation.duration = 15
-        fullRotation.repeatCount = .infinity
-        sunImageView.layer.add(fullRotation, forKey: "360")
-    }
-    
     func animateLayout(duration: Double, delay: Double) {
         UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseInOut], animations: { [weak self] in
             self?.view.layoutIfNeeded()
@@ -114,5 +135,20 @@ private extension LoginViewController {
         UIView.animate(withDuration: 3, delay: 1, options: .curveEaseInOut, animations: { [weak self] in
             self?.backgroundView.backgroundColor = #colorLiteral(red: 0.6485911608, green: 0.790573597, blue: 0.9224731922, alpha: 1)
         })
+    }
+}
+
+// MARK: - CA Animation Delegate
+
+extension LoginViewController: CAAnimationDelegate {
+    
+    func animateSun() {
+        let fullRotation = CABasicAnimation(keyPath: "transform.rotation")
+        fullRotation.delegate = self
+        fullRotation.fromValue = NSNumber(floatLiteral: 0)
+        fullRotation.toValue = NSNumber(floatLiteral: Double(CGFloat.pi * 2))
+        fullRotation.duration = 15
+        fullRotation.repeatCount = .infinity
+        sunImageView.layer.add(fullRotation, forKey: "360")
     }
 }
