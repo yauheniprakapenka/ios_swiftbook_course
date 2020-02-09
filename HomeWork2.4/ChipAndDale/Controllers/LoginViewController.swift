@@ -63,6 +63,12 @@ class LoginViewController: UIViewController {
         sunImageViewHeightConstraint.constant += view.bounds.height
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabbarController = segue.destination as! UITabBarController
+        let vc = tabbarController.viewControllers?.first as! ChipViewController
+        vc.header = "\(usernameTextField.text!) \(passwordTextField.text!)"
+    }
+    
     // MARK: - IBAction
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

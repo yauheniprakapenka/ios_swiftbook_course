@@ -192,15 +192,31 @@
                     <view key="view" contentMode="scaleToFill" id="RvQ-go-feh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zs9-kz-OfT">
+                                <rect key="frame" x="40" y="40" width="240" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="leading" secondItem="xrL-l9-SUl" secondAttribute="leading" constant="40" id="2lD-Jv-w08"/>
+                            <constraint firstItem="xrL-l9-SUl" firstAttribute="trailing" secondItem="Zs9-kz-OfT" secondAttribute="trailing" constant="40" id="3Ja-cS-auX"/>
+                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="top" secondItem="xrL-l9-SUl" secondAttribute="top" constant="40" id="CMa-Cb-cmp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xrL-l9-SUl"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chip" image="Chip" id="CrI-Fv-7ij"/>
                     <navigationItem key="navigationItem" id="dKg-CD-Tol"/>
+                    <connections>
+                        <outlet property="headerLabel" destination="Zs9-kz-OfT" id="Fte-ON-L6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TT-Fo-cBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="919"/>
+            <point key="canvasLocation" x="931.875" y="917.95774647887322"/>
         </scene>
         <!--Dale-->
         <scene sceneID="RvU-MJ-Jb7">
@@ -252,7 +268,7 @@
                                             <constraint firstAttribute="height" constant="50" id="hrE-N9-5fk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <state key="normal" title="А-а-а! Понял">
+                                        <state key="normal" title="Понятно">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

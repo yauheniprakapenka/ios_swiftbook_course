@@ -10,12 +10,14 @@ import UIKit
 
 class AlertViewController: UIViewController {
     
-    var currentTip: Tip?
-    
     // MARK: - IBOutlets
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var tipImageView: UIImageView!
+    
+    // MARK: - Public properties
+    
+    var currentTip: Tip?
     
     // MARK: - Lifecycle
     

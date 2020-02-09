@@ -10,7 +10,19 @@ import UIKit
 
 class ChipViewController: UIViewController {
     
+    // MARK: - IBAction
     
+    @IBOutlet var headerLabel: UILabel!
     
+    // MARK: - Puclic properties
     
+    var header = ""
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        headerLabel.text = "Привет, \(header)!"
+    }
 }

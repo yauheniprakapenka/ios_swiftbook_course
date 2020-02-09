@@ -68,7 +68,6 @@
 			children = (
 				3E52DBB223F01D760090DE2E /* Model */,
 				3E52DBAF23EFCCE40090DE2E /* Extension */,
-				3E52DBAC23EF547B0090DE2E /* Views */,
 				3E52DBAB23EF4AD50090DE2E /* Controllers */,
 				3E52DBAA23EF4AC20090DE2E /* Storyboards */,
 				3E52DBA923EF4AAC0090DE2E /* Support Files */,
@@ -112,13 +111,6 @@
 				3E52DBB723F065E40090DE2E /* ChipViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3E52DBAC23EF547B0090DE2E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		3E52DBAF23EFCCE40090DE2E /* Extension */ = {
