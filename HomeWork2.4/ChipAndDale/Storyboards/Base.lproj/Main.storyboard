@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChipAndDale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nature" translatesAutoresizingMaskIntoConstraints="NO" id="V1w-L2-8Xb">
+                                <rect key="frame" x="0.0" y="397.5" width="320" height="170.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH0-Yn-2MU">
+                                <rect key="frame" x="93" y="60" width="134" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1K-HT-dhF">
+                                <rect key="frame" x="40" y="143" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Dox-9j-N8C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeR-Vs-5XX">
+                                <rect key="frame" x="40" y="217" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CiT-bA-XCN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BeR-Vs-5XX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4rK-39-cY6"/>
+                            <constraint firstItem="V1w-L2-8Xb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="9nK-de-dM4"/>
+                            <constraint firstItem="V1w-L2-8Xb" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Eww-hY-Srh"/>
+                            <constraint firstItem="uH0-Yn-2MU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FtB-Zj-YFX"/>
+                            <constraint firstItem="j1K-HT-dhF" firstAttribute="top" secondItem="uH0-Yn-2MU" secondAttribute="bottom" constant="40" id="HMb-Uy-Mxv"/>
+                            <constraint firstItem="V1w-L2-8Xb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IJZ-Op-9pS"/>
+                            <constraint firstItem="uH0-Yn-2MU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="QsV-M9-6QY"/>
+                            <constraint firstItem="j1K-HT-dhF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UCq-b2-Fpx"/>
+                            <constraint firstItem="V1w-L2-8Xb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="anQ-nV-qNj"/>
+                            <constraint firstItem="BeR-Vs-5XX" firstAttribute="top" secondItem="j1K-HT-dhF" secondAttribute="bottom" constant="40" id="m0A-jc-qwJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabelCenterConstraint" destination="FtB-Zj-YFX" id="s8P-R1-JRq"/>
+                        <outlet property="passwordTextFieldCenterConstraint" destination="4rK-39-cY6" id="WLh-o2-UTu"/>
+                        <outlet property="usernameTextFieldCenterConstraint" destination="UCq-b2-Fpx" id="llx-jk-s2u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.75" y="138.38028169014083"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Nature" width="704" height="416"/>
+    </resources>
+</document>

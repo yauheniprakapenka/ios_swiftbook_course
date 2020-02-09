@@ -13,6 +13,7 @@
 		3E52DB9C23EF43C80090DE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E52DB9A23EF43C80090DE2E /* Main.storyboard */; };
 		3E52DB9E23EF43CA0090DE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E52DB9D23EF43CA0090DE2E /* Assets.xcassets */; };
 		3E52DBA123EF43CA0090DE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E52DB9F23EF43CA0090DE2E /* LaunchScreen.storyboard */; };
+		3E52DBB123EFCCF60090DE2E /* UIView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52DBB023EFCCF60090DE2E /* UIView+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3E52DB9D23EF43CA0090DE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E52DBA023EF43CA0090DE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E52DBA223EF43CA0090DE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E52DBB023EFCCF60090DE2E /* UIView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,64 @@
 		3E52DB9323EF43C80090DE2E /* ChipAndDale */ = {
 			isa = PBXGroup;
 			children = (
-				3E52DB9423EF43C80090DE2E /* AppDelegate.swift */,
-				3E52DB9623EF43C80090DE2E /* SceneDelegate.swift */,
-				3E52DB9823EF43C80090DE2E /* ViewController.swift */,
-				3E52DB9A23EF43C80090DE2E /* Main.storyboard */,
-				3E52DB9D23EF43CA0090DE2E /* Assets.xcassets */,
-				3E52DB9F23EF43CA0090DE2E /* LaunchScreen.storyboard */,
-				3E52DBA223EF43CA0090DE2E /* Info.plist */,
+				3E52DBAF23EFCCE40090DE2E /* Extension */,
+				3E52DBAC23EF547B0090DE2E /* Views */,
+				3E52DBAB23EF4AD50090DE2E /* Controllers */,
+				3E52DBAA23EF4AC20090DE2E /* Storyboards */,
+				3E52DBA923EF4AAC0090DE2E /* Support Files */,
+				3E52DBA823EF4A980090DE2E /* Resources */,
 			);
 			path = ChipAndDale;
+			sourceTree = "<group>";
+		};
+		3E52DBA823EF4A980090DE2E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E52DB9D23EF43CA0090DE2E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E52DBA923EF4AAC0090DE2E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E52DB9423EF43C80090DE2E /* AppDelegate.swift */,
+				3E52DB9623EF43C80090DE2E /* SceneDelegate.swift */,
+				3E52DBA223EF43CA0090DE2E /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		3E52DBAA23EF4AC20090DE2E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E52DB9A23EF43C80090DE2E /* Main.storyboard */,
+				3E52DB9F23EF43CA0090DE2E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3E52DBAB23EF4AD50090DE2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E52DB9823EF43C80090DE2E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3E52DBAC23EF547B0090DE2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E52DBAF23EFCCE40090DE2E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3E52DBB023EFCCF60090DE2E /* UIView+Keyboard.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E52DB9923EF43C80090DE2E /* ViewController.swift in Sources */,
+				3E52DBB123EFCCF60090DE2E /* UIView+Keyboard.swift in Sources */,
 				3E52DB9523EF43C80090DE2E /* AppDelegate.swift in Sources */,
 				3E52DB9723EF43C80090DE2E /* SceneDelegate.swift in Sources */,
 			);
@@ -286,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = ChipAndDale/Info.plist;
+				INFOPLIST_FILE = "ChipAndDale/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6CKN6S5G;
-				INFOPLIST_FILE = ChipAndDale/Info.plist;
+				INFOPLIST_FILE = "ChipAndDale/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
