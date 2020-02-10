@@ -20,6 +20,7 @@
 		3E52DBBC23F08F460090DE2E /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E52DBBB23F08F460090DE2E /* Tip.swift */; };
 		3EBE6E1B23F19BFD0013D3B3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6E1A23F19BFC0013D3B3 /* SettingViewController.swift */; };
 		3EBE6E1F23F1A9D10013D3B3 /* Intro2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EBE6E1E23F1A9B90013D3B3 /* Intro2.mp4 */; };
+		3EBE6E2123F1BDAA0013D3B3 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6E2023F1BDAA0013D3B3 /* DiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3E52DBBB23F08F460090DE2E /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		3EBE6E1A23F19BFC0013D3B3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3EBE6E1E23F1A9B90013D3B3 /* Intro2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro2.mp4; sourceTree = "<group>"; };
+		3EBE6E2023F1BDAA0013D3B3 /* DiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				3E52DB9823EF43C80090DE2E /* LoginViewController.swift */,
 				3E52DBB523F02EDF0090DE2E /* AlertViewController.swift */,
 				3E52DBB723F065E40090DE2E /* ChipViewController.swift */,
+				3EBE6E2023F1BDAA0013D3B3 /* DiceViewController.swift */,
 				3EBE6E1A23F19BFC0013D3B3 /* SettingViewController.swift */,
 			);
 			path = Controllers;
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E52DB9923EF43C80090DE2E /* LoginViewController.swift in Sources */,
+				3EBE6E2123F1BDAA0013D3B3 /* DiceViewController.swift in Sources */,
 				3E52DBBC23F08F460090DE2E /* Tip.swift in Sources */,
 				3E52DBB823F065E40090DE2E /* ChipViewController.swift in Sources */,
 				3E52DBB623F02EDF0090DE2E /* AlertViewController.swift in Sources */,

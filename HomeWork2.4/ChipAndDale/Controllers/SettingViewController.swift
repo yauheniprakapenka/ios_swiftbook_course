@@ -12,10 +12,11 @@ import AVKit
 
 class SettingViewController: UIViewController {
     
-    // MARK: - IBAction
+    // MARK: - IBOutlet
     
     @IBOutlet var exitButton: UIButton!
     @IBOutlet var videoView: UIView!
+    @IBOutlet var playButton: UIButton!
     
     // MARK: - Private Properties
     
@@ -52,8 +53,10 @@ class SettingViewController: UIViewController {
         
         if isPlaying {
             player.pause()
+            playButton.setTitle("Play", for: .normal)
         } else {
             player.play()
+            playButton.setTitle("Pause", for: .normal)
         }
         
         isPlaying = !isPlaying
