@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QuartzCore
+import QuartzCore // Для поворота вью на 360
 
 class LoginViewController: UIViewController {
     
@@ -32,7 +32,17 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet var sunImageViewHeightConstraint: NSLayoutConstraint!
     
-    // MARK: - Lifecycle
+    // MARK: - View Controller Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        headerLabelCenterConstraint.constant -= view.bounds.width
+        usernameTextFieldCenterConstraint.constant -= view.bounds.width
+        passwordTextFieldCenterConstraint.constant -= view.bounds.width
+        loginButtonHeightConstraint.constant += view.bounds.height
+        sunImageViewHeightConstraint.constant += view.bounds.height
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,19 +59,10 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 16
         
         view.makeDissmissKeyboardTap()
-        usernameTextField.text = "chip"
-        passwordTextField.text = "dale"
+        //        usernameTextField.text = "chip"
+        //        passwordTextField.text = "dale"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        headerLabelCenterConstraint.constant -= view.bounds.width
-        usernameTextFieldCenterConstraint.constant -= view.bounds.width
-        passwordTextFieldCenterConstraint.constant -= view.bounds.width
-        loginButtonHeightConstraint.constant += view.bounds.height
-        sunImageViewHeightConstraint.constant += view.bounds.height
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabbarController = segue.destination as! UITabBarController
@@ -75,13 +76,13 @@ class LoginViewController: UIViewController {
         
         view.endEditing(true)
         
-        let user = User()
-        
         guard let username = usernameTextField.text, let password = passwordTextField.text,
             !username.isEmpty && !password.isEmpty else {
                 presentAlertVC(tip: .wrong)
                 return
         }
+        
+        let user = User()
         
         guard usernameTextField.text!.lowercased() == user.name && passwordTextField.text!.lowercased() == user.password else {
             presentAlertVC(tip: .wrong)

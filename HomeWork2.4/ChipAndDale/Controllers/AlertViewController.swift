@@ -19,7 +19,7 @@ class AlertViewController: UIViewController {
     
     var currentTip: Tip?
     
-    // MARK: - Lifecycle
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

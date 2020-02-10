@@ -18,7 +18,7 @@ class ChipViewController: UIViewController {
     
     var header = ""
     
-    // MARK: - Lifecycle
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
