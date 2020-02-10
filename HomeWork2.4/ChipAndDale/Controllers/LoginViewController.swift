@@ -59,8 +59,8 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 16
         
         view.makeDissmissKeyboardTap()
-        //        usernameTextField.text = "chip"
-        //        passwordTextField.text = "dale"
+            usernameTextField.text = "chip"
+            passwordTextField.text = "dale"
     }
     
     
@@ -96,6 +96,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgetPasswordTapped(_ sender: Any) {
         presentAlertVC(tip: .password)
+    }
+    
+    @IBAction func unwindSeque(segue: UIStoryboardSegue) {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     // MARK: - Private Methods

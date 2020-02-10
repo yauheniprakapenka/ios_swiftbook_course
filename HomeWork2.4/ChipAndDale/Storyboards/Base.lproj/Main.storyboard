@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny-cloud-2" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-f0-VlT">
-                                <rect key="frame" x="175" y="28" width="111" height="41"/>
+                                <rect key="frame" x="175" y="28" width="111" height="41.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="CLs-vt-51F"/>
                                     <constraint firstAttribute="width" constant="111" id="mvO-9n-PTY"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH0-Yn-2MU">
-                                <rect key="frame" x="93" y="40" width="134.5" height="44"/>
+                                <rect key="frame" x="92.5" y="40" width="135" height="44"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" red="0.20514190199999999" green="0.2196547687" blue="0.52551853660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -193,18 +193,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zs9-kz-OfT">
-                                <rect key="frame" x="40" y="40" width="240" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Привет!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zs9-kz-OfT">
+                                <rect key="frame" x="109.5" y="200" width="101" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.20514190199999999" green="0.2196547687" blue="0.52551853660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-17915-128" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-kk-MnQ">
+                                <rect key="frame" x="20" y="30" width="280" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="ULK-Db-s4X"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="q3X-Fo-WyF">
+                                <rect key="frame" x="20" y="253.5" width="280" height="243.5"/>
+                                <mutableString key="text">Чип и Дейл — бурундуки, созданные американской компанией «Disney». Известность приобрели благодаря мультсериалу «Чип и Дейл спешат на помощь». Их имена являют собой каламбур, основанный по фамилии Томаса Чиппендейла, крупнейшего мастера мебельного искусства эпохи рококо и раннего классицизма</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="leading" secondItem="xrL-l9-SUl" secondAttribute="leading" constant="40" id="2lD-Jv-w08"/>
-                            <constraint firstItem="xrL-l9-SUl" firstAttribute="trailing" secondItem="Zs9-kz-OfT" secondAttribute="trailing" constant="40" id="3Ja-cS-auX"/>
-                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="top" secondItem="xrL-l9-SUl" secondAttribute="top" constant="40" id="CMa-Cb-cmp"/>
+                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="centerX" secondItem="RvQ-go-feh" secondAttribute="centerX" id="1QP-Dm-8Px"/>
+                            <constraint firstItem="q3X-Fo-WyF" firstAttribute="top" secondItem="Zs9-kz-OfT" secondAttribute="bottom" constant="20" id="I6W-bE-KRs"/>
+                            <constraint firstItem="rXQ-kk-MnQ" firstAttribute="top" secondItem="xrL-l9-SUl" secondAttribute="top" constant="30" id="NgV-Wo-sMy"/>
+                            <constraint firstItem="xrL-l9-SUl" firstAttribute="trailing" secondItem="rXQ-kk-MnQ" secondAttribute="trailing" constant="20" id="in6-Q1-LR6"/>
+                            <constraint firstItem="rXQ-kk-MnQ" firstAttribute="leading" secondItem="xrL-l9-SUl" secondAttribute="leading" constant="20" id="ldR-cP-VVk"/>
+                            <constraint firstItem="xrL-l9-SUl" firstAttribute="trailing" secondItem="q3X-Fo-WyF" secondAttribute="trailing" constant="20" id="m5p-oe-d0Q"/>
+                            <constraint firstItem="Zs9-kz-OfT" firstAttribute="top" secondItem="rXQ-kk-MnQ" secondAttribute="bottom" constant="30" id="vQc-po-Vw7"/>
+                            <constraint firstItem="q3X-Fo-WyF" firstAttribute="leading" secondItem="xrL-l9-SUl" secondAttribute="leading" constant="20" id="zhd-cU-mkq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xrL-l9-SUl"/>
                     </view>
@@ -225,7 +243,7 @@
                     <view key="view" contentMode="scaleToFill" id="P67-ei-gvr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="naj-iY-x9w"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dale" image="Dale2" id="vnE-FL-JHD"/>
@@ -237,18 +255,74 @@
         <!--Setting-->
         <scene sceneID="OPA-Xm-Nd3">
             <objects>
-                <viewController id="RHr-Pi-9Mi" sceneMemberID="viewController">
+                <viewController id="RHr-Pi-9Mi" customClass="SettingViewController" customModule="ChipAndDale" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="beV-Y2-7P0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exit" translatesAutoresizingMaskIntoConstraints="NO" id="sIb-an-C7L">
+                                <rect key="frame" x="20" y="30" width="280" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Uil-WO-yTu"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-yR-iDF">
+                                <rect key="frame" x="20" y="419" width="280" height="60"/>
+                                <color key="backgroundColor" red="0.435123384" green="0.74773198370000005" blue="0.95296972989999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IF5-Bs-ccZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Выйти">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fz2-AN-m7P" kind="unwind" unwindAction="unwindSequeWithSegue:" id="Vap-Pb-rfU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDf-0q-EnP">
+                                <rect key="frame" x="20" y="210" width="280" height="169"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4W-Ms-5a1">
+                                <rect key="frame" x="138" y="191" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bTp-a1-ZnF"/>
+                                    <constraint firstAttribute="width" constant="44" id="esN-xO-jrZ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="playpause.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playPauseBauttonTapped:" destination="RHr-Pi-9Mi" eventType="touchUpInside" id="sww-bG-wSe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="i4W-Ms-5a1" firstAttribute="top" secondItem="sIb-an-C7L" secondAttribute="bottom" constant="21" id="0vD-yx-xMc"/>
+                            <constraint firstItem="lhb-yR-iDF" firstAttribute="leading" secondItem="Amk-uB-j34" secondAttribute="leading" constant="20" id="80e-is-dKd"/>
+                            <constraint firstItem="sIb-an-C7L" firstAttribute="leading" secondItem="Amk-uB-j34" secondAttribute="leading" constant="20" id="Q5S-Hx-4Tf"/>
+                            <constraint firstItem="sIb-an-C7L" firstAttribute="top" secondItem="Amk-uB-j34" secondAttribute="top" constant="30" id="Udh-Wd-HOk"/>
+                            <constraint firstItem="Amk-uB-j34" firstAttribute="bottom" secondItem="lhb-yR-iDF" secondAttribute="bottom" constant="40" id="Uyf-Ge-beO"/>
+                            <constraint firstItem="pDf-0q-EnP" firstAttribute="top" secondItem="sIb-an-C7L" secondAttribute="bottom" constant="40" id="YVf-vJ-MEu"/>
+                            <constraint firstItem="pDf-0q-EnP" firstAttribute="leading" secondItem="Amk-uB-j34" secondAttribute="leading" constant="20" id="aTb-lF-bFE"/>
+                            <constraint firstItem="Amk-uB-j34" firstAttribute="trailing" secondItem="pDf-0q-EnP" secondAttribute="trailing" constant="20" id="bZF-59-HKG"/>
+                            <constraint firstItem="Amk-uB-j34" firstAttribute="trailing" secondItem="sIb-an-C7L" secondAttribute="trailing" constant="20" id="ccS-Qv-vsU"/>
+                            <constraint firstItem="lhb-yR-iDF" firstAttribute="top" secondItem="pDf-0q-EnP" secondAttribute="bottom" constant="40" id="deQ-9U-d3Q"/>
+                            <constraint firstItem="Amk-uB-j34" firstAttribute="trailing" secondItem="lhb-yR-iDF" secondAttribute="trailing" constant="20" id="fo0-dG-Vg9"/>
+                            <constraint firstItem="i4W-Ms-5a1" firstAttribute="centerX" secondItem="beV-Y2-7P0" secondAttribute="centerX" id="hbD-Gg-Bc0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Amk-uB-j34"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="DNb-Rp-9ca"/>
+                    <connections>
+                        <outlet property="exitButton" destination="lhb-yR-iDF" id="pCP-mP-Fer"/>
+                        <outlet property="videoView" destination="pDf-0q-EnP" id="Pj9-AP-Uiq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT9-bJ-RGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fz2-AN-m7P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2510" y="924"/>
+            <point key="canvasLocation" x="2508.75" y="923.23943661971828"/>
         </scene>
         <!--Alert View Controller-->
         <scene sceneID="Gcf-ly-ISZ">
@@ -276,7 +350,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NameTip" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-cK-my6">
-                                        <rect key="frame" x="5" y="0.0" width="219" height="150"/>
+                                        <rect key="frame" x="5" y="0.0" width="219" height="150.00000000000003"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -333,15 +407,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1-17915-128" width="42.5" height="42.5"/>
         <image name="Chip" width="25" height="25"/>
         <image name="Dale2" width="25" height="25"/>
+        <image name="Exit" width="42.5" height="42.5"/>
         <image name="NameTip" width="235.5" height="118.5"/>
-        <image name="Nature" width="704" height="416"/>
+        <image name="Nature" width="234.66667175292969" height="138.66667175292969"/>
         <image name="Setting" width="25" height="25"/>
         <image name="bg-sunny-cloud-1" width="159" height="50"/>
         <image name="bg-sunny-cloud-2" width="138" height="49"/>
         <image name="bg-sunny-cloud-3" width="74" height="35"/>
         <image name="bg-sunny-cloud-4" width="115" height="50"/>
+        <image name="playpause.fill" catalog="system" width="64" height="36"/>
         <image name="sun.max.fill" catalog="system" width="64" height="62"/>
     </resources>
 </document>
