@@ -59,8 +59,8 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 16
         
         view.makeDissmissKeyboardTap()
-            usernameTextField.text = "chip"
-            passwordTextField.text = "dale"
+//            usernameTextField.text = "chip"
+//            passwordTextField.text = "dale"
     }
     
     

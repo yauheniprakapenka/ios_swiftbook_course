@@ -42,7 +42,5 @@ class DiceViewController: UIViewController {
         for diceImageView in diceImageViews {
             diceImageView?.image = dices[Int.random(in: 0...dices.count - 1)]
         }
-        
     }
-    
 }
