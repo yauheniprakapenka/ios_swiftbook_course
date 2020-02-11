@@ -57,17 +57,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 16
-        
-        view.makeDissmissKeyboardTap()
-//            usernameTextField.text = "chip"
-//            passwordTextField.text = "dale"
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabbarController = segue.destination as! UITabBarController
         let vc = tabbarController.viewControllers?.first as! ChipViewController
         vc.header = "\(usernameTextField.text!) \(passwordTextField.text!)"
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     // MARK: - IBAction
@@ -79,6 +79,8 @@ class LoginViewController: UIViewController {
         guard let username = usernameTextField.text, let password = passwordTextField.text,
             !username.isEmpty && !password.isEmpty else {
                 presentAlertVC(tip: .wrong)
+                usernameTextField.text = ""
+                passwordTextField.text = ""
                 return
         }
         
@@ -86,6 +88,8 @@ class LoginViewController: UIViewController {
         
         guard usernameTextField.text!.lowercased() == user.name && passwordTextField.text!.lowercased() == user.password else {
             presentAlertVC(tip: .wrong)
+            usernameTextField.text = ""
+            passwordTextField.text = ""
             return
         }
     }
