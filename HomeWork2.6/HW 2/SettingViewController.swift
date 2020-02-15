@@ -23,6 +23,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
+    
+    var color: UIColor!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,9 @@ class SettingViewController: UIViewController {
         setValue(for: redTextField, greenTextField, blueTextField)
         
         addDoneButtonTo(redTextField, greenTextField, blueTextField)
+        
+        colorView.backgroundColor = color
+        
     }
     
     // Изменение цветов слайдерами
@@ -57,6 +62,11 @@ class SettingViewController: UIViewController {
         
         setColor()
     }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        
+    }
+    
     
     // Цвет вью
     private func setColor() {
