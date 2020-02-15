@@ -9,3 +9,4 @@ https://swiftbook.ru/webinar-swift-level-2/
 * HomeWork 2.3 - Приведение типов
 * HomeWork 2.4 - Авторизация с переходом в таббар
 * HomeWork 2.5 - Квиз
+* HomeWork 2.6 - Делегирование 
