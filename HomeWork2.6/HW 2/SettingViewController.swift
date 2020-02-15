@@ -8,6 +8,13 @@
 
 import UIKit
 
+
+// new
+protocol SettingViewControllerDelegate {
+    func setBackgroundcolor(color: UIColor)
+}
+// new
+
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var colorView: UIView!
@@ -24,7 +31,10 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     
+    // new
     var color: UIColor!
+    var delegate: SettingViewControllerDelegate!
+    // new
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +50,11 @@ class SettingViewController: UIViewController {
         
         addDoneButtonTo(redTextField, greenTextField, blueTextField)
         
+        // new
         colorView.backgroundColor = color
-        
+        // new
     }
     
-    // Изменение цветов слайдерами
     @IBAction func rgbSlider(_ sender: UISlider) {
         
         switch sender.tag {
@@ -59,16 +69,16 @@ class SettingViewController: UIViewController {
             blueTextField.text = string(from: sender)
         default: break
         }
-        
         setColor()
     }
     
+    // new
     @IBAction func doneButtonTapped(_ sender: Any) {
-        
+        delegate.setBackgroundcolor(color: (colorView.backgroundColor ?? #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)))
+        dismiss(animated: false)
     }
+    // new
     
-    
-    // Цвет вью
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -100,7 +110,6 @@ class SettingViewController: UIViewController {
         }
     }
     
-    // Значения RGB
     private func string(from slider: UISlider) -> String {
         return String(format: "%.2f", slider.value)
     }
