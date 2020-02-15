@@ -10,40 +10,48 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet var backgroundView: UIView!
     
-    private var mainColor: UIColor!
+    // MARK: - Private Properties
+    
+    private var homeVCColor: UIColor!
+    
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainColor = backgroundView.backgroundColor
-        
-        let rgbColor = mainColor.components
-        print("red \(rgbColor.red)")
-        print("green \(rgbColor.green)")
-        print("blue \(rgbColor.blue)")
-        print("alpha \(rgbColor.alpha)")
+        homeVCColor = backgroundView.backgroundColor
     }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let settingVC = segue.destination as! SettingViewController
         settingVC.delegate = self
-        settingVC.color = mainColor
+        settingVC.redColor = homeVCColor.components.red
+        settingVC.blueColor = homeVCColor.components.blue
+        settingVC.greenColor = homeVCColor.components.green
     }
 }
+
+// MARK: - Setting View Controller Delegate
 
 extension HomeViewController: SettingViewControllerDelegate {
     func setBackgroundcolor(color: UIColor) {
         backgroundView.backgroundColor = color
-        mainColor = color
+        homeVCColor = color
     }
 }
+
+// MARK: - UIColor 
 
 extension UIColor {
     var coreImageColor: CIColor {
         return CIColor(color: self)
     }
+    
     var components: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         let coreImageColor = self.coreImageColor
         return (coreImageColor.red, coreImageColor.green, coreImageColor.blue, coreImageColor.alpha)

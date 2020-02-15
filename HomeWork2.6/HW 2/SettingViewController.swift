@@ -1,13 +1,12 @@
 //
-//  ViewController.swift
+//  SettingViewController.swift
 //  HW 2
 //
-//  Created by Alexey Efimov on 12.06.2018.
-//  Copyright © 2018 Alexey Efimov. All rights reserved.
+//  Created by yauheni prakapenka on 15.02.2020.
+//  Copyright © 2020 Alexey Efimov. All rights reserved.
 //
 
 import UIKit
-
 
 // new
 protocol SettingViewControllerDelegate {
@@ -31,10 +30,13 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     
-    // new
-    var color: UIColor!
+// new
     var delegate: SettingViewControllerDelegate!
-    // new
+    
+    var redColor: CGFloat!
+    var greenColor: CGFloat!
+    var blueColor: CGFloat!
+// new
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +45,12 @@ class SettingViewController: UIViewController {
         
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
-        
-        setColor()
-        setValue(for: redLabel, greenLabel, blueLabel)
-        setValue(for: redTextField, greenTextField, blueTextField)
-        
+
         addDoneButtonTo(redTextField, greenTextField, blueTextField)
         
-        // new
-        colorView.backgroundColor = color
-        // new
+// new
+        configureUI()
+// new
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {
@@ -72,12 +70,22 @@ class SettingViewController: UIViewController {
         setColor()
     }
     
-    // new
+// new
     @IBAction func doneButtonTapped(_ sender: Any) {
-        delegate.setBackgroundcolor(color: (colorView.backgroundColor ?? #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)))
+        delegate.setBackgroundcolor(color: (colorView.backgroundColor ?? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
         dismiss(animated: false)
     }
-    // new
+
+    private func configureUI() {
+        redSlider.value = Float(redColor)
+        greenSlider.value = Float(greenColor)
+        blueSlider.value = Float(blueColor)
+        
+        setColor()
+        setValue(for: redLabel, greenLabel, blueLabel)
+        setValue(for: redTextField, greenTextField, blueTextField)
+    }
+// new
     
     private func setColor() {
         colorView.backgroundColor = UIColor(
@@ -109,6 +117,7 @@ class SettingViewController: UIViewController {
             }
         }
     }
+    
     
     private func string(from slider: UISlider) -> String {
         return String(format: "%.2f", slider.value)
