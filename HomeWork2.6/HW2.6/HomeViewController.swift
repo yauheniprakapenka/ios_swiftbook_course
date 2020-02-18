@@ -10,29 +10,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - IBOutlets
-    
-    @IBOutlet var backgroundView: UIView!
-    
     // MARK: - Private Properties
     
     private var homeVCColor: UIColor!
-    
-    // MARK: - View Controller Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        homeVCColor = backgroundView.backgroundColor
-    }
-    
+        
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let settingVC = segue.destination as! SettingViewController
         settingVC.delegate = self
-        settingVC.redColor = homeVCColor.components.red
-        settingVC.blueColor = homeVCColor.components.blue
-        settingVC.greenColor = homeVCColor.components.green
+        settingVC.backroundColor = view.backgroundColor
     }
 }
 
@@ -40,7 +27,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: SettingViewControllerDelegate {
     func setBackgroundcolor(color: UIColor) {
-        backgroundView.backgroundColor = color
+        view.backgroundColor = color
         homeVCColor = color
     }
 }

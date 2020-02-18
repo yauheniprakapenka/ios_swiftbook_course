@@ -32,10 +32,7 @@ class SettingViewController: UIViewController {
     
 // new
     var delegate: SettingViewControllerDelegate!
-    
-    var redColor: CGFloat!
-    var greenColor: CGFloat!
-    var blueColor: CGFloat!
+    var backroundColor: UIColor!
 // new
         
     override func viewDidLoad() {
@@ -77,9 +74,9 @@ class SettingViewController: UIViewController {
     }
 
     private func configureUI() {
-        redSlider.value = Float(redColor)
-        greenSlider.value = Float(greenColor)
-        blueSlider.value = Float(blueColor)
+        redSlider.value = Float(backroundColor.components.red)
+        greenSlider.value = Float(backroundColor.components.green)
+        blueSlider.value = Float(backroundColor.components.blue)
         
         setColor()
         setValue(for: redLabel, greenLabel, blueLabel)
