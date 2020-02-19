@@ -18,6 +18,14 @@ class DetailViewController: UIViewController {
     
     // MARK: - Public properties
     
+    var person: Person!
     
+    // MARk: - View Controller Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameLabel.text = person.firstName.first!  + " " + person.lastName.first!
+        userEmail.text = person.email.first!
+        userPhoneLabel.text = person.phones.first!
+    }
 }

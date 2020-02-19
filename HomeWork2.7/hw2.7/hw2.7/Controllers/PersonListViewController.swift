@@ -26,7 +26,7 @@ class PersonListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailVC" {
             let detailVC = segue.destination as! DetailViewController
-            
+            detailVC.person = sender as? Person
         }
     }
 }
@@ -52,6 +52,11 @@ extension PersonListViewController: UITableViewDataSource {
 extension PersonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(firstName[indexPath.row])
+        let currentPerson = Person(firstName: [person.firstName[indexPath.row]],
+                                   lastName: [person.lastName[indexPath.row]],
+                                   email: [person.email[indexPath.row]],
+                                   phones: [person.phones[indexPath.row]])
+        
+        performSegue(withIdentifier: "detailVC", sender: currentPerson)
     }
 }
