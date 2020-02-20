@@ -13,19 +13,20 @@ class DetailViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var userEmail: UILabel!
-    @IBOutlet var userPhoneLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
     
     // MARK: - Public properties
     
     var person: Person!
     
-    // MARk: - View Controller Lifecycle
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = person.firstName.first!  + " " + person.lastName.first!
-        userEmail.text = person.email.first!
-        userPhoneLabel.text = person.phones.first!
+        
+        nameLabel.text = person.fullName
+        emailLabel.text = person.email
+        phoneLabel.text = person.phoneNumber
     }
 }
