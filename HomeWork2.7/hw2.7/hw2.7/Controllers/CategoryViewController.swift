@@ -8,42 +8,45 @@
 
 import UIKit
 
-struct NewPerson {
-    var firstName: String
-    var lastName: String
-    var phone: String
-    var email: String
-    
-    static func getPerson() -> [NewPerson] {
-        [NewPerson(firstName: "Bill", lastName: "Talent", phone: "1@1,by", email: "12345"),
-         NewPerson(firstName: "Tom", lastName: "Jones", phone: "2@2.by", email: "12345"),
-         NewPerson(firstName: "Adam", lastName: "Lambert", phone: "3@3.by", email: "1312312")]
-    }
-}
-
 class CategoryViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    let person = NewPerson.getPerson()
+    let persons = Person.getContactList()
 }
 
 extension CategoryViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        persons.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        persons[section].fullName
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "123"
+        let person = persons[indexPath.section]
+        
+        // Вариант 1 - без иконок
+        // cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phoneNumber
+        
+        // Вариант 2 - с иконками
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = person.phoneNumber
+            cell.imageView?.image = UIImage(systemName: Contacts.phone.rawValue)
+        default:
+            cell.textLabel?.text = person.email
+            cell.imageView?.image = UIImage(systemName: Contacts.email.rawValue)
+        }
         
         return cell
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        person.count
-    }
-    
-    
 }
